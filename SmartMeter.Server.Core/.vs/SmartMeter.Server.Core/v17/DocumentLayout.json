@@ -1,0 +1,45 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Work\\University\\SmartMeter.Server.Core\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2B96E685-ECF8-427D-BCFA-3B8288DE38CA}|SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj|c:\\work\\university\\smartmeter.server.core\\smartmeter.server.core\\authentication\\jwthelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B96E685-ECF8-427D-BCFA-3B8288DE38CA}|SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj|solutionrelative:smartmeter.server.core\\authentication\\jwthelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{6324226f-61b6-4f28-92ee-18d4b5fe1e48}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "JWTHelper.cs",
+              "DocumentMoniker": "C:\\Work\\University\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\Authentication\\JWTHelper.cs",
+              "RelativeDocumentMoniker": "SmartMeter.Server.Core\\Authentication\\JWTHelper.cs",
+              "ToolTip": "C:\\Work\\University\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\Authentication\\JWTHelper.cs",
+              "RelativeToolTip": "SmartMeter.Server.Core\\Authentication\\JWTHelper.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAwwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-15T21:38:18.076Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
