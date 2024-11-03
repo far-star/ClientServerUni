@@ -21,8 +21,9 @@ namespace SmartMeter.Server.Core.Services
             _jwtHelper = jwtHelper;
         }
 
-        public void ProcessReading(string token)
+        public void ProcessReading(string message)
         {
+            string token = string.Empty;
             if (!_jwtHelper.ValidateToken(token))
             {
                 Console.WriteLine($"Invalid token: {token}");
