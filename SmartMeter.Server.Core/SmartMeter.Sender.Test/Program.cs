@@ -1,49 +1,34 @@
-﻿using RabbitMQ.Client;
-using System.Text;
+﻿using System;
+using System.Threading;
+using System.Threading.Tasks;
 
-namespace SmartMeter.Sender.Test
+class Program
 {
-    internal class Program
+    static async Task Main(string[] args)
     {
-        static void Main(string[] args)
+        var publisher = new RabbitMQPublisher();
+
+        var cancellationTokenSource = new CancellationTokenSource();
+        var cancellationToken = cancellationTokenSource.Token;
+
+        Console.WriteLine("Press [Enter] to stop sending messages.");
+
+        // Send messages every 15 seconds
+        Task sendingTask = Task.Run(async () =>
         {
-            var factory = new ConnectionFactory()
+            while (!cancellationToken.IsCancellationRequested)
             {
-                HostName = "127.0.0.1", // Use the correct hostname
-                Port = 5671, // SSL port
-                Ssl = new SslOption
-                {
-                    Enabled = true,
-                    ServerName = "localhost", // Adjust to your certificate CN
-                    CertificateValidationCallback = (sender, certificate, chain, sslPolicyErrors) => true // For testing only
-                }
-            };
-
-            using (var connection = factory.CreateConnection())
-            using (var channel = connection.CreateModel())
-            {
-                // Declare a queue named "test_queue"
-                channel.QueueDeclare(queue: "test_queue",
-                                     durable: false,
-                                     exclusive: false,
-                                     autoDelete: false,
-                                     arguments: null);
-
-                // Create a message to send
-                string message = "Hello RabbitMQ!";
-                var body = Encoding.UTF8.GetBytes(message);
-
-                // Publish the message to the queue
-                channel.BasicPublish(exchange: "",
-                                     routingKey: "test_queue",
-                                     basicProperties: null,
-                                     body: body);
-
-                Console.WriteLine(" [x] Sent {0}", message);
+                var reading = RandomDataGenerator.GenerateRandomMeterReading();
+                publisher.SendMessage(reading);
+                await Task.Delay(15000);  // Adjust frequency as needed
             }
+        }, cancellationToken);
 
-            Console.WriteLine("Press [enter] to exit.");
-            Console.ReadLine();
-        }
+        Console.ReadLine();
+        cancellationTokenSource.Cancel();
+
+        await sendingTask; // Wait for sending to complete
+        publisher.Close();
+        Console.WriteLine("Stopped sending messages.");
     }
 }
