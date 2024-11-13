@@ -8,6 +8,6 @@ namespace SmartMeter.Server.Core.Services
 {
     public interface ISmartMeterService
     {
-        void ProcessReading(string message);
+        void ProcessReading(string message, out bool isSuccess);
     }
 }

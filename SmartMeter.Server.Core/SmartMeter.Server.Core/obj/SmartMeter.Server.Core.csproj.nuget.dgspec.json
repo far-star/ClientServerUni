@@ -1,23 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Work\\University\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj": {}
+    "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj": {}
   },
   "projects": {
-    "C:\\Work\\University\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj": {
+    "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Work\\University\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj",
+        "projectUniqueName": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj",
         "projectName": "SmartMeter.Server.Core",
-        "projectPath": "C:\\Work\\University\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj",
-        "packagesPath": "C:\\Users\\jackc\\.nuget\\packages\\",
-        "outputPath": "C:\\Work\\University\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\obj\\",
+        "projectPath": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj",
+        "packagesPath": "C:\\Users\\Jake\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\jackc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Jake\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -25,9 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://nuget.kinspeed.com/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
@@ -43,8 +42,9 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "direct"
-        }
+          "auditMode": "all"
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -83,7 +83,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace SmartMeter.Server.Core.Services
@@ -20,27 +21,29 @@ namespace SmartMeter.Server.Core.Services
             _tokenRepository = tokenRepository;
             _jwtHelper = jwtHelper;
         }
-
-        public void ProcessReading(string message)
+        public void ProcessReading(string message, out bool isSuccess)
         {
-            string token = string.Empty;
-            if (!_jwtHelper.ValidateToken(token))
+            isSuccess = false;
+            try
             {
-                Console.WriteLine($"Invalid token: {token}");
-                return;
-            }
+                var jsonDocu = JsonDocument.Parse(message);
+                string? token = jsonDocu.RootElement.GetProperty("Jwt").GetString();
+                // token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZWFkaW5nX2lkIjoiNzI4MTMiLCJqdGkiOiJhODMzNTcyMy1jNWRjLTRmOTMtODNhNC1kZmQ3MzBmOWFhZjgiLCJleHAiOjE3MzE0NDI2MzQsImlzcyI6Ik1ldGVyU2VuZGVyIiwiYXVkIjoiTWV0ZXJSZWNlaXZlciJ9.NqUyukK8JdrS7Tf6N2yd3O_2lg-yIV1_C2cstPzy1-k";
+                // ^ test token
+                if (string.IsNullOrEmpty(token) || !_jwtHelper.ValidateToken(token))
+                {
+                    Console.WriteLine($"Token not found or invalid: {token}");
+                    return;
+                }
 
-            var jwt = _tokenRepository.GetTokenByReadingId(int.Parse(token));
-            if (jwt == null)
-            {
-                Console.WriteLine($"Token not found: {token}");
-                return;
+                string? meterid = jsonDocu.RootElement.GetProperty("MeterId").GetString();
+                var totalConsumption = jsonDocu.RootElement.GetProperty("EnergyConsumption").GetProperty("TotalConsumption").GetDecimal();
+                isSuccess = true;
+                Console.WriteLine($"Total Consumption for {meterid}: {totalConsumption} kWh");
             }
-
-            var reading = _readingRepository.GetReadingById(jwt.ReadingId);
-            if (reading != null)
+            catch (Exception ex)
             {
-                Console.WriteLine($"Total Consumption: {reading.TotalConsumption} kWh");
+                Console.WriteLine($"Faile due to {ex.Message}");
             }
         }
     }

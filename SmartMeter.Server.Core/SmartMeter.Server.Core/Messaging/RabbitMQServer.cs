@@ -43,8 +43,15 @@ namespace SmartMeter.Server.Core.Messaging
                     var message = Encoding.UTF8.GetString(body);
                     Console.WriteLine("Received message: {0}", message);
 
+                    bool isSuccess;
+
                     // Process each message concurrently
-                    Task.Run(() => _smartMeterService.ProcessReading(message));
+                    _smartMeterService.ProcessReading(message, out isSuccess);
+                    if (!isSuccess)
+                    {
+                        Console.WriteLine("Rejected");
+                        _channel.BasicReject(ea.DeliveryTag, false);
+                    };
                 };
 
                 // Start consuming messages from the queue
