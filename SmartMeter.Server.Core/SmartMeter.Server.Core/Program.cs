@@ -41,6 +41,7 @@ namespace SmartMeter.Server.Core
             // Add repositories
             services.AddScoped<IReadingRepository, ReadingRepository>();
             services.AddScoped<ITokenRepository, TokenRepository>();
+            services.AddScoped<ITariffRepository, TariffRepository>();
 
             // Add services
             services.AddScoped<IJWTHelper, JWTHelper>();

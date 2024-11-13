@@ -1,0 +1,17 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SmartMeter.Server.Core.DTOs
+{
+    public class MeterData
+    {
+        public string MeterId { get; set; }
+        public DateTime Timestamp { get; set; }
+        public EnergyConsumption EnergyConsumption { get; set; }
+        public TariffJson Tariff { get; set; }
+        public string Jwt {  get; set; }
+    }
+}

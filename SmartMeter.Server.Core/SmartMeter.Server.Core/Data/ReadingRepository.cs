@@ -19,6 +19,13 @@ namespace SmartMeter.Server.Core.Data
         {
             _context.Readings.Add(reading);
             _context.SaveChanges();
+
+            Console.WriteLine("\n=== Readings ===");
+            foreach (var r in _context.Readings)
+            {
+                Console.WriteLine($"ReadingId: {r.ReadingId}, MeterId: {r.MeterId}, Timestamp: {r.Timestamp}");
+                Console.WriteLine($"TotalConsumption: {r.TotalConsumption} kWh, PeakConsumption: {r.PeakConsumption} kWh, OffPeakConsumption: {r.OffPeakConsumption} kWh");
+            }
         }
 
         public Reading GetReadingById(int readingId)

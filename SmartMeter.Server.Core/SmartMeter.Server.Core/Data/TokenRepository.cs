@@ -20,6 +20,12 @@ namespace SmartMeter.Server.Core.Data
         {
             _context.JWTokens.Add(token);
             _context.SaveChanges();
+
+            Console.WriteLine("\n=== JWTokens ===");
+            foreach (var jwt in _context.JWTokens)
+            {
+                Console.WriteLine($"JwtId: {jwt.JwtId}, ReadingId: {jwt.ReadingId}, Token: {jwt.Token}, Timestamp: {jwt.Timestamp}");
+            }
         }
 
         public JWToken GetTokenByReadingId(int readingId)

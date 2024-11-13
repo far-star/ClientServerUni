@@ -45,7 +45,6 @@ namespace SmartMeter.Server.Core.Messaging
 
                     bool isSuccess;
 
-                    // Process each message concurrently
                     _smartMeterService.ProcessReading(message, out isSuccess);
                     if (!isSuccess)
                     {
