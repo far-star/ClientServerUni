@@ -1,7 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using SmartMeter.Server.Core.Authentication;
 using SmartMeter.Server.Core.Data;
+using SmartMeter.Server.Core.Logging;
+using SmartMeter.Server.Core.Logging.Loggers;
 using SmartMeter.Server.Core.Messaging;
 using SmartMeter.Server.Core.Models;
 using SmartMeter.Server.Core.Services;
@@ -18,37 +21,57 @@ namespace SmartMeter.Server.Core
         private static JWTHelper tokenHelper = new JWTHelper();
         static void Main(string[] args)
         {
-            // Initialize Dependency Injection container
-            var services = ConfigureServices();
-            var serviceProvider = services.BuildServiceProvider();
+            try
+            {
+                // Initialize Dependency Injection container
+                var services = ConfigureServices();
+                var serviceProvider = services.BuildServiceProvider();
 
-            // Start the server
-            var server = serviceProvider.GetRequiredService<IServer>();
-            server.Start();
+                // Start the server
+                var server = serviceProvider.GetRequiredService<IServer>();
+                server.Start();
 
 
-            Console.ReadLine();
+                Console.ReadLine();
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            
         }
 
         private static IServiceCollection ConfigureServices()
         {
             var services = new ServiceCollection();
+            string logDirectory = Path.Combine("..", "..", "..", "..", "Log");
+            Directory.CreateDirectory(logDirectory); // Ensure the Log directory exists
 
-            // Add DbContext
+            string logFilePath = Path.Combine(logDirectory, "SmartMeterActivity.txt");
+
+            // Register logging listeners first
+            services.AddSingleton<ILogListener, ConsoleLogger>();
+            services.AddSingleton<ILogListener>(provider => new FileLogger(logFilePath));
+
+            services.AddSingleton<LoggingFactory>();
+
+            services.AddSingleton<Logger>(provider =>
+            {
+                var loggerFactory = provider.GetRequiredService<LoggingFactory>();
+                return loggerFactory.CreateLogger();
+            });
+
             services.AddDbContext<SmartMeterContext>(options =>
                 options.UseInMemoryDatabase("SmartMeterMockDb"));
 
-            // Add repositories
             services.AddScoped<IReadingRepository, ReadingRepository>();
             services.AddScoped<ITokenRepository, TokenRepository>();
             services.AddScoped<ITariffRepository, TariffRepository>();
 
-            // Add services
             services.AddScoped<IJWTHelper, JWTHelper>();
             services.AddScoped<ISmartMeterService, SmartMeterService>();
             services.AddScoped<IRabbitMQConnectionFactory, RabbitMQConnectionFactory>();
 
-            // Add server
             services.AddScoped<IServer, RabbitMQServer>();
 
             return services;

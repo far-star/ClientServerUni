@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SmartMeter.Server.Core.Logging;
+using SmartMeter.Server.Core.Logging.Loggers;
 
 namespace SmartMeter.Server.Core.Messaging
 {
@@ -15,22 +17,24 @@ namespace SmartMeter.Server.Core.Messaging
         private readonly IRabbitMQConnectionFactory _connectionFactory;
         private IConnection _connection;
         private IModel _channel;
+        private Logger _logger;
 
-        public RabbitMQServer(ISmartMeterService smartMeterService, IRabbitMQConnectionFactory connectionFactory)
+        public RabbitMQServer(ISmartMeterService smartMeterService, IRabbitMQConnectionFactory connectionFactory, LoggingFactory logger)
         {
             _smartMeterService = smartMeterService;
             _connectionFactory = connectionFactory;
+            _logger = logger.CreateLogger();
         }
 
         public void Start()
         {
             try
             {
-                Console.WriteLine("Establishing RabbitMQ connection...");
+                _logger.Info("Establishing RabbitMQ connection...");
                 _connection = _connectionFactory.CreateConnection();
                 _channel = _connection.CreateModel();
 
-                Console.WriteLine("Connected to RabbitMQ!");
+                _logger.Info("Connected to RabbitMQ!");
 
                 // Declare and configure the queue
                 _channel.QueueDeclare(queue: "test_queue", durable: false, exclusive: false, autoDelete: false, arguments: null);
@@ -41,26 +45,31 @@ namespace SmartMeter.Server.Core.Messaging
                 {
                     var body = ea.Body.ToArray();
                     var message = Encoding.UTF8.GetString(body);
-                    Console.WriteLine("Received message: {0}", message);
+                    _logger.Info($"Received message: {message}");
 
                     bool isSuccess;
 
                     _smartMeterService.ProcessReading(message, out isSuccess);
                     if (!isSuccess)
                     {
-                        Console.WriteLine("Rejected");
+                        _logger.Error("Message Rejected");
                         _channel.BasicReject(ea.DeliveryTag, false);
-                    };
+                    }
+                    else
+                    {
+                        _logger.Success("Message Acknowledged");
+                        _channel.BasicAck(ea.DeliveryTag, false);
+                    }
                 };
 
                 // Start consuming messages from the queue
-                _channel.BasicConsume(queue: "test_queue", autoAck: true, consumer: consumer);
+                _channel.BasicConsume(queue: "test_queue", autoAck: false, consumer: consumer);
 
-                Console.WriteLine("Waiting for messages...");
+                _logger.Info("Waiting for messages...");
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error starting server: {ex.Message}");
+                _logger.Error($"Error starting server: {ex.Message}");
                 Dispose();  // Ensure cleanup on failure
             }
         }
@@ -76,7 +85,7 @@ namespace SmartMeter.Server.Core.Messaging
             _channel?.Dispose();
             _connection?.Close();
             _connection?.Dispose();
-            Console.WriteLine("RabbitMQ connection closed.");
+            _logger.Info("RabbitMQ connection closed.");
         }
     }
 

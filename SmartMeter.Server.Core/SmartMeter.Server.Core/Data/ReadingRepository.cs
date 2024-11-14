@@ -1,4 +1,5 @@
-﻿using SmartMeter.Server.Core.Models;
+﻿using SmartMeter.Server.Core.Logging;
+using SmartMeter.Server.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,21 +11,23 @@ namespace SmartMeter.Server.Core.Data
     public class ReadingRepository : IReadingRepository
     {
         private readonly SmartMeterContext _context;
+        private Logger _logger;
 
-        public ReadingRepository(SmartMeterContext context)
+        public ReadingRepository(SmartMeterContext context, Logger logger)
         {
             _context = context;
+            _logger = logger;
         }
         public void AddReading(Reading reading)
         {
             _context.Readings.Add(reading);
             _context.SaveChanges();
 
-            Console.WriteLine("\n=== Readings ===");
+            _logger.Info("\n=== Readings ===");
             foreach (var r in _context.Readings)
             {
-                Console.WriteLine($"ReadingId: {r.ReadingId}, MeterId: {r.MeterId}, Timestamp: {r.Timestamp}");
-                Console.WriteLine($"TotalConsumption: {r.TotalConsumption} kWh, PeakConsumption: {r.PeakConsumption} kWh, OffPeakConsumption: {r.OffPeakConsumption} kWh");
+                _logger.Info($"ReadingId: {r.ReadingId}, MeterId: {r.MeterId}, Timestamp: {r.Timestamp}");
+                _logger.Info($"TotalConsumption: {r.TotalConsumption} kWh, PeakConsumption: {r.PeakConsumption} kWh, OffPeakConsumption: {r.OffPeakConsumption} kWh");
             }
         }
 

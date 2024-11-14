@@ -1,6 +1,7 @@
 ﻿using SmartMeter.Server.Core.Authentication;
 using SmartMeter.Server.Core.Data;
 using SmartMeter.Server.Core.DTOs;
+using SmartMeter.Server.Core.Logging;
 using SmartMeter.Server.Core.Models;
 using System;
 using System.Collections.Generic;
@@ -17,13 +18,16 @@ namespace SmartMeter.Server.Core.Services
         private readonly ITokenRepository _tokenRepository;
         private readonly ITariffRepository _tariffRepository;
         private readonly IJWTHelper _jwtHelper;
+        private Logger _logger;
 
-        public SmartMeterService(IReadingRepository readingRepository, ITokenRepository tokenRepository, ITariffRepository tariffRepository, IJWTHelper jwtHelper)
+        public SmartMeterService(IReadingRepository readingRepository, ITokenRepository tokenRepository, 
+            ITariffRepository tariffRepository, IJWTHelper jwtHelper, Logger logger)
         {
             _readingRepository = readingRepository;
             _tokenRepository = tokenRepository;
             _tariffRepository = tariffRepository;
             _jwtHelper = jwtHelper;
+            _logger = logger;
         }
         public void ProcessReading(string message, out bool isSuccess)
         {
@@ -36,7 +40,7 @@ namespace SmartMeter.Server.Core.Services
                 // ^ test token
                 if (string.IsNullOrEmpty(token) || !_jwtHelper.ValidateToken(token))
                 {
-                    Console.WriteLine($"Token not found or invalid: {token}");
+                    _logger.Warn($"Token not found or invalid: {token}");
                     return;
                 }
 
@@ -47,7 +51,7 @@ namespace SmartMeter.Server.Core.Services
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Failed due to {ex.Message}");
+                _logger.Error($"Failed due to {ex.Message}");
             }
         }
 

@@ -1,4 +1,5 @@
-﻿using SmartMeter.Server.Core.Models;
+﻿using SmartMeter.Server.Core.Logging;
+using SmartMeter.Server.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,10 +11,12 @@ namespace SmartMeter.Server.Core.Data
     public class TokenRepository : ITokenRepository
     {
         private readonly SmartMeterContext _context;
+        private Logger _logger;
 
-        public TokenRepository(SmartMeterContext context)
+        public TokenRepository(SmartMeterContext context, Logger logger)
         {
             _context = context;
+            _logger = logger;
         }
 
         public void AddToken(JWToken token)
