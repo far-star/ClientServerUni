@@ -29,30 +29,76 @@ namespace SmartMeter.Server.Core.Services
             _jwtHelper = jwtHelper;
             _logger = logger;
         }
-        public void ProcessReading(string message, out bool isSuccess)
-        {
-            isSuccess = false;
+
+        public bool ProcessReading(string message, out MeterData? meterData)
+        {            
             try
             {
-                var meterData = ParseMessage(message);
+                meterData = ParseMessage(message);
                 string? token = meterData.Jwt;
                 // token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZWFkaW5nX2lkIjoiNzI4MTMiLCJqdGkiOiJhODMzNTcyMy1jNWRjLTRmOTMtODNhNC1kZmQ3MzBmOWFhZjgiLCJleHAiOjE3MzE0NDI2MzQsImlzcyI6Ik1ldGVyU2VuZGVyIiwiYXVkIjoiTWV0ZXJSZWNlaXZlciJ9.NqUyukK8JdrS7Tf6N2yd3O_2lg-yIV1_C2cstPzy1-k";
                 // ^ test token
                 if (string.IsNullOrEmpty(token) || !_jwtHelper.ValidateToken(token))
                 {
                     _logger.Warn($"Token not found or invalid: {token}");
-                    return;
+                    return false;
                 }
 
-                
                 //Write message to database
                 WriteMessageToDatabase(meterData);
-                isSuccess = true;
+                return true;
             }
             catch (Exception ex)
             {
                 _logger.Error($"Failed due to {ex.Message}");
+                meterData = null;
+                return false;
             }
+        }
+
+        public string CalculateBill(MeterData meterData)
+        {
+            // Retrieve rates and consumption in a structured way
+            var rates = new
+            {
+                OffPeak = meterData.Tariff.OffPeakRate,
+                Peak = meterData.Tariff.PeakRate,
+                Standard = meterData.Tariff.StandardRate
+            };
+
+            var consumption = new
+            {
+                OffPeak = meterData.EnergyConsumption.OffPeakConsumption,
+                Peak = meterData.EnergyConsumption.PeakConsumption,
+                Total = meterData.EnergyConsumption.TotalConsumption
+            };
+
+            // Calculate standard consumption
+            decimal standardConsumption = consumption.Total - (consumption.OffPeak + consumption.Peak);
+
+            // Calculate bills
+            var bill = new
+            {
+                OffPeak = consumption.OffPeak * rates.OffPeak,
+                Peak = consumption.Peak * rates.Peak,
+                Standard = standardConsumption * rates.Standard
+            };
+
+            decimal totalBill = bill.OffPeak + bill.Peak + bill.Standard;
+
+            var result = new
+            {
+                MeterId = meterData.MeterId,
+                OffPeakBill = bill.OffPeak,
+                PeakBill = bill.Peak,
+                StandardBill = bill.Standard,
+                TotalBill = totalBill // Include total bill here
+            };
+
+            return JsonSerializer.Serialize(result, new JsonSerializerOptions
+            {
+                WriteIndented = true // Optional, for pretty-printing JSON
+            });
         }
 
         private void WriteMessageToDatabase(MeterData meterData)

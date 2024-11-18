@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SmartMeter.Server.Core.DTOs;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,7 @@ namespace SmartMeter.Server.Core.Services
 {
     public interface ISmartMeterService
     {
-        void ProcessReading(string message, out bool isSuccess);
+        bool ProcessReading(string message, out MeterData meterData);
+        string CalculateBill(MeterData meterData);
     }
 }
