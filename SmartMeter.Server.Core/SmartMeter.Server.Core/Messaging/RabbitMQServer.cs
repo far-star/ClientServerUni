@@ -17,8 +17,9 @@ namespace SmartMeter.Server.Core.Messaging
         private readonly ISmartMeterService _smartMeterService;
         private readonly IRabbitMQConnectionFactory _connectionFactory;
         private IConnection _connection;
-        private IModel _channel;
         private Logger _logger;
+        private readonly List<IModel> _channels = new List<IModel>();
+        private readonly int _numThreads = 20;
 
         public RabbitMQServer(ISmartMeterService smartMeterService, IRabbitMQConnectionFactory connectionFactory, LoggingFactory logger)
         {
@@ -33,15 +34,34 @@ namespace SmartMeter.Server.Core.Messaging
             {
                 _logger.Info("Establishing RabbitMQ connection...");
                 _connection = _connectionFactory.CreateConnection();
-                _channel = _connection.CreateModel();
+
+                for (int i = 0; i < _numThreads; i++)
+                {
+                    var channel = _connection.CreateModel();
+                    _channels.Add(channel);
+
+                    Thread channelThread = new Thread(() => StartChannelConsumer(channel, i));
+                    channelThread.Start();
+                }
 
                 _logger.Info("Connected to RabbitMQ!");
+            }
+            catch (Exception ex)
+            {
+                _logger.Error($"Error starting server: {ex.Message}");
+                Dispose();
+            }
+        }
 
+        public void StartChannelConsumer(IModel channel, int channelNumber)
+        {
+            try
+            {
                 // Declare and configure the queue
-                _channel.QueueDeclare(queue: "test_queue", durable: false, exclusive: false, autoDelete: false, arguments: null);
+                channel.QueueDeclare(queue: "test_queue", durable: false, exclusive: false, autoDelete: false, arguments: null);
 
                 // Setup the consumer
-                var consumer = new EventingBasicConsumer(_channel);
+                var consumer = new EventingBasicConsumer(channel);
                 consumer.Received += (model, ea) =>
                 {
                     var body = ea.Body.ToArray();
@@ -54,7 +74,7 @@ namespace SmartMeter.Server.Core.Messaging
                     if (string.IsNullOrEmpty(replyTo))
                     {
                         _logger.Error("Message does not have a reply-to property. Skipping...");
-                        _channel.BasicReject(ea.DeliveryTag, false);
+                        channel.BasicReject(ea.DeliveryTag, false);
                         return;
                     }
 
@@ -65,7 +85,7 @@ namespace SmartMeter.Server.Core.Messaging
                     if (!isSuccess || meterData == null )
                     {
                         _logger.Error("Message Rejected");
-                        _channel.BasicReject(ea.DeliveryTag, false);
+                        channel.BasicReject(ea.DeliveryTag, false);
                         return;
                     }
 
@@ -74,10 +94,10 @@ namespace SmartMeter.Server.Core.Messaging
                     try
                     {
                         var responseBytes = Encoding.UTF8.GetBytes(bill);
-                        var responseProperties = _channel.CreateBasicProperties();
+                        var responseProperties = channel.CreateBasicProperties();
                         responseProperties.CorrelationId = correlationId; // Preserve correlation ID
 
-                        _channel.BasicPublish(exchange: "", routingKey: replyTo, basicProperties: responseProperties, body: responseBytes);
+                        channel.BasicPublish(exchange: "", routingKey: replyTo, basicProperties: responseProperties, body: responseBytes);
                         _logger.Info($"Response sent to {replyTo}: {bill}");
                     }
                     catch (Exception ex)
@@ -85,13 +105,13 @@ namespace SmartMeter.Server.Core.Messaging
                         _logger.Error($"Failed to send response: {ex.Message}");
                     }
 
-                    _logger.Success("Message Acknowledged");
-                    _channel.BasicAck(ea.DeliveryTag, false);
+                    _logger.Success($"Message Acknowledged");
+                    channel.BasicAck(ea.DeliveryTag, false);
 
                 };
 
                 // Start consuming messages from the queue
-                _channel.BasicConsume(queue: "test_queue", autoAck: false, consumer: consumer);
+                channel.BasicConsume(queue: "test_queue", autoAck: false, consumer: consumer);
 
                 _logger.Info("Waiting for messages...");
             }
@@ -109,12 +129,18 @@ namespace SmartMeter.Server.Core.Messaging
 
         public void Dispose()
         {
-            _channel?.Close();
-            _channel?.Dispose();
+            foreach (var channel in _channels)
+            {
+                DisposeChannel(channel);
+            }
             _connection?.Close();
             _connection?.Dispose();
             _logger.Info("RabbitMQ connection closed.");
         }
+        private void DisposeChannel(IModel channel)
+        {
+            channel?.Close();
+            channel?.Dispose();
+        }
     }
-
 }

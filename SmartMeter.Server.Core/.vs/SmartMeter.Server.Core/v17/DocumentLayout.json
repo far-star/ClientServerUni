@@ -7,16 +7,144 @@
       "RelativeMoniker": "D:0:0:{2B96E685-ECF8-427D-BCFA-3B8288DE38CA}|SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj|solutionrelative:smartmeter.server.core\\messaging\\rabbitmqserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{2B96E685-ECF8-427D-BCFA-3B8288DE38CA}|SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj|c:\\users\\jake\\source\\repos\\clientserveruni\\smartmeter.server.core\\smartmeter.server.core\\messaging\\rabbitmqconnectionfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B96E685-ECF8-427D-BCFA-3B8288DE38CA}|SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj|solutionrelative:smartmeter.server.core\\messaging\\rabbitmqconnectionfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C9F4AEA-D878-404D-9DCA-FF8B0124737E}|SmartMeter.Sender.Test\\SmartMeter.Sender.Test.csproj|c:\\users\\jake\\source\\repos\\clientserveruni\\smartmeter.server.core\\smartmeter.sender.test\\rabbitmqpublisher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C9F4AEA-D878-404D-9DCA-FF8B0124737E}|SmartMeter.Sender.Test\\SmartMeter.Sender.Test.csproj|solutionrelative:smartmeter.sender.test\\rabbitmqpublisher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B96E685-ECF8-427D-BCFA-3B8288DE38CA}|SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj|c:\\users\\jake\\source\\repos\\clientserveruni\\smartmeter.server.core\\smartmeter.server.core\\logging\\loggers\\filelogger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B96E685-ECF8-427D-BCFA-3B8288DE38CA}|SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj|solutionrelative:smartmeter.server.core\\logging\\loggers\\filelogger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{2B96E685-ECF8-427D-BCFA-3B8288DE38CA}|SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj|c:\\users\\jake\\source\\repos\\clientserveruni\\smartmeter.server.core\\smartmeter.server.core\\services\\smartmeterservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2B96E685-ECF8-427D-BCFA-3B8288DE38CA}|SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj|solutionrelative:smartmeter.server.core\\services\\smartmeterservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B96E685-ECF8-427D-BCFA-3B8288DE38CA}|SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj|c:\\users\\jake\\source\\repos\\clientserveruni\\smartmeter.server.core\\smartmeter.server.core\\data\\tariffrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B96E685-ECF8-427D-BCFA-3B8288DE38CA}|SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj|solutionrelative:smartmeter.server.core\\data\\tariffrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B96E685-ECF8-427D-BCFA-3B8288DE38CA}|SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj|c:\\users\\jake\\source\\repos\\clientserveruni\\smartmeter.server.core\\smartmeter.server.core\\data\\tokenrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B96E685-ECF8-427D-BCFA-3B8288DE38CA}|SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj|solutionrelative:smartmeter.server.core\\data\\tokenrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B96E685-ECF8-427D-BCFA-3B8288DE38CA}|SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj|c:\\users\\jake\\source\\repos\\clientserveruni\\smartmeter.server.core\\smartmeter.server.core\\models\\tariff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B96E685-ECF8-427D-BCFA-3B8288DE38CA}|SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj|solutionrelative:smartmeter.server.core\\models\\tariff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C9F4AEA-D878-404D-9DCA-FF8B0124737E}|SmartMeter.Sender.Test\\SmartMeter.Sender.Test.csproj|c:\\users\\jake\\source\\repos\\clientserveruni\\smartmeter.server.core\\smartmeter.sender.test\\randomdatagenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C9F4AEA-D878-404D-9DCA-FF8B0124737E}|SmartMeter.Sender.Test\\SmartMeter.Sender.Test.csproj|solutionrelative:smartmeter.sender.test\\randomdatagenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C9F4AEA-D878-404D-9DCA-FF8B0124737E}|SmartMeter.Sender.Test\\SmartMeter.Sender.Test.csproj|c:\\users\\jake\\source\\repos\\clientserveruni\\smartmeter.server.core\\smartmeter.sender.test\\jwthelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C9F4AEA-D878-404D-9DCA-FF8B0124737E}|SmartMeter.Sender.Test\\SmartMeter.Sender.Test.csproj|solutionrelative:smartmeter.sender.test\\jwthelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C9F4AEA-D878-404D-9DCA-FF8B0124737E}|SmartMeter.Sender.Test\\SmartMeter.Sender.Test.csproj|c:\\users\\jake\\source\\repos\\clientserveruni\\smartmeter.server.core\\smartmeter.sender.test\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C9F4AEA-D878-404D-9DCA-FF8B0124737E}|SmartMeter.Sender.Test\\SmartMeter.Sender.Test.csproj|solutionrelative:smartmeter.sender.test\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C9F4AEA-D878-404D-9DCA-FF8B0124737E}|SmartMeter.Sender.Test\\SmartMeter.Sender.Test.csproj|c:\\users\\jake\\source\\repos\\clientserveruni\\smartmeter.server.core\\smartmeter.sender.test\\models\\tariffdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C9F4AEA-D878-404D-9DCA-FF8B0124737E}|SmartMeter.Sender.Test\\SmartMeter.Sender.Test.csproj|solutionrelative:smartmeter.sender.test\\models\\tariffdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C9F4AEA-D878-404D-9DCA-FF8B0124737E}|SmartMeter.Sender.Test\\SmartMeter.Sender.Test.csproj|c:\\users\\jake\\source\\repos\\clientserveruni\\smartmeter.server.core\\smartmeter.sender.test\\models\\meterreadingmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C9F4AEA-D878-404D-9DCA-FF8B0124737E}|SmartMeter.Sender.Test\\SmartMeter.Sender.Test.csproj|solutionrelative:smartmeter.sender.test\\models\\meterreadingmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C9F4AEA-D878-404D-9DCA-FF8B0124737E}|SmartMeter.Sender.Test\\SmartMeter.Sender.Test.csproj|c:\\users\\jake\\source\\repos\\clientserveruni\\smartmeter.server.core\\smartmeter.sender.test\\models\\energyconsumption.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C9F4AEA-D878-404D-9DCA-FF8B0124737E}|SmartMeter.Sender.Test\\SmartMeter.Sender.Test.csproj|solutionrelative:smartmeter.sender.test\\models\\energyconsumption.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B96E685-ECF8-427D-BCFA-3B8288DE38CA}|SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj|c:\\users\\jake\\source\\repos\\clientserveruni\\smartmeter.server.core\\smartmeter.server.core\\messaging\\irabbitmqconnectionfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B96E685-ECF8-427D-BCFA-3B8288DE38CA}|SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj|solutionrelative:smartmeter.server.core\\messaging\\irabbitmqconnectionfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B96E685-ECF8-427D-BCFA-3B8288DE38CA}|SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj|c:\\users\\jake\\source\\repos\\clientserveruni\\smartmeter.server.core\\smartmeter.server.core\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B96E685-ECF8-427D-BCFA-3B8288DE38CA}|SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj|solutionrelative:smartmeter.server.core\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2B96E685-ECF8-427D-BCFA-3B8288DE38CA}|SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj|c:\\users\\jake\\source\\repos\\clientserveruni\\smartmeter.server.core\\smartmeter.server.core\\services\\ismartmeterservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2B96E685-ECF8-427D-BCFA-3B8288DE38CA}|SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj|solutionrelative:smartmeter.server.core\\services\\ismartmeterservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{2B96E685-ECF8-427D-BCFA-3B8288DE38CA}|SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj|c:\\users\\jake\\source\\repos\\clientserveruni\\smartmeter.server.core\\smartmeter.server.core\\messaging\\iserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B96E685-ECF8-427D-BCFA-3B8288DE38CA}|SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj|solutionrelative:smartmeter.server.core\\messaging\\iserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{2B96E685-ECF8-427D-BCFA-3B8288DE38CA}|SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj|c:\\users\\jake\\source\\repos\\clientserveruni\\smartmeter.server.core\\smartmeter.server.core\\authentication\\jwthelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2B96E685-ECF8-427D-BCFA-3B8288DE38CA}|SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj|solutionrelative:smartmeter.server.core\\authentication\\jwthelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B96E685-ECF8-427D-BCFA-3B8288DE38CA}|SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj|c:\\users\\jake\\source\\repos\\clientserveruni\\smartmeter.server.core\\smartmeter.server.core\\authentication\\ijwthelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B96E685-ECF8-427D-BCFA-3B8288DE38CA}|SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj|solutionrelative:smartmeter.server.core\\authentication\\ijwthelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B96E685-ECF8-427D-BCFA-3B8288DE38CA}|SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj|c:\\users\\jake\\source\\repos\\clientserveruni\\smartmeter.server.core\\smartmeter.server.core\\models\\reading.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B96E685-ECF8-427D-BCFA-3B8288DE38CA}|SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj|solutionrelative:smartmeter.server.core\\models\\reading.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B96E685-ECF8-427D-BCFA-3B8288DE38CA}|SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj|c:\\users\\jake\\source\\repos\\clientserveruni\\smartmeter.server.core\\smartmeter.server.core\\models\\meter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B96E685-ECF8-427D-BCFA-3B8288DE38CA}|SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj|solutionrelative:smartmeter.server.core\\models\\meter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B96E685-ECF8-427D-BCFA-3B8288DE38CA}|SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj|c:\\users\\jake\\source\\repos\\clientserveruni\\smartmeter.server.core\\smartmeter.server.core\\models\\jwtoken.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B96E685-ECF8-427D-BCFA-3B8288DE38CA}|SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj|solutionrelative:smartmeter.server.core\\models\\jwtoken.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B96E685-ECF8-427D-BCFA-3B8288DE38CA}|SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj|c:\\users\\jake\\source\\repos\\clientserveruni\\smartmeter.server.core\\smartmeter.server.core\\logging\\loglevel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B96E685-ECF8-427D-BCFA-3B8288DE38CA}|SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj|solutionrelative:smartmeter.server.core\\logging\\loglevel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B96E685-ECF8-427D-BCFA-3B8288DE38CA}|SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj|c:\\users\\jake\\source\\repos\\clientserveruni\\smartmeter.server.core\\smartmeter.server.core\\logging\\loggingfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B96E685-ECF8-427D-BCFA-3B8288DE38CA}|SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj|solutionrelative:smartmeter.server.core\\logging\\loggingfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B96E685-ECF8-427D-BCFA-3B8288DE38CA}|SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj|c:\\users\\jake\\source\\repos\\clientserveruni\\smartmeter.server.core\\smartmeter.server.core\\logging\\logger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B96E685-ECF8-427D-BCFA-3B8288DE38CA}|SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj|solutionrelative:smartmeter.server.core\\logging\\logger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B96E685-ECF8-427D-BCFA-3B8288DE38CA}|SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj|c:\\users\\jake\\source\\repos\\clientserveruni\\smartmeter.server.core\\smartmeter.server.core\\logging\\iloglistener.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B96E685-ECF8-427D-BCFA-3B8288DE38CA}|SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj|solutionrelative:smartmeter.server.core\\logging\\iloglistener.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B96E685-ECF8-427D-BCFA-3B8288DE38CA}|SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj|c:\\users\\jake\\source\\repos\\clientserveruni\\smartmeter.server.core\\smartmeter.server.core\\logging\\loggers\\consolelogger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B96E685-ECF8-427D-BCFA-3B8288DE38CA}|SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj|solutionrelative:smartmeter.server.core\\logging\\loggers\\consolelogger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B96E685-ECF8-427D-BCFA-3B8288DE38CA}|SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj|c:\\users\\jake\\source\\repos\\clientserveruni\\smartmeter.server.core\\smartmeter.server.core\\dtos\\tariffjson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B96E685-ECF8-427D-BCFA-3B8288DE38CA}|SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj|solutionrelative:smartmeter.server.core\\dtos\\tariffjson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B96E685-ECF8-427D-BCFA-3B8288DE38CA}|SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj|c:\\users\\jake\\source\\repos\\clientserveruni\\smartmeter.server.core\\smartmeter.server.core\\dtos\\meterdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B96E685-ECF8-427D-BCFA-3B8288DE38CA}|SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj|solutionrelative:smartmeter.server.core\\dtos\\meterdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B96E685-ECF8-427D-BCFA-3B8288DE38CA}|SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj|c:\\users\\jake\\source\\repos\\clientserveruni\\smartmeter.server.core\\smartmeter.server.core\\dtos\\energyconsumption.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B96E685-ECF8-427D-BCFA-3B8288DE38CA}|SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj|solutionrelative:smartmeter.server.core\\dtos\\energyconsumption.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B96E685-ECF8-427D-BCFA-3B8288DE38CA}|SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj|c:\\users\\jake\\source\\repos\\clientserveruni\\smartmeter.server.core\\smartmeter.server.core\\data\\smartmetercontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B96E685-ECF8-427D-BCFA-3B8288DE38CA}|SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj|solutionrelative:smartmeter.server.core\\data\\smartmetercontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B96E685-ECF8-427D-BCFA-3B8288DE38CA}|SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj|c:\\users\\jake\\source\\repos\\clientserveruni\\smartmeter.server.core\\smartmeter.server.core\\data\\readingrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B96E685-ECF8-427D-BCFA-3B8288DE38CA}|SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj|solutionrelative:smartmeter.server.core\\data\\readingrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B96E685-ECF8-427D-BCFA-3B8288DE38CA}|SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj|c:\\users\\jake\\source\\repos\\clientserveruni\\smartmeter.server.core\\smartmeter.server.core\\data\\itokenrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B96E685-ECF8-427D-BCFA-3B8288DE38CA}|SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj|solutionrelative:smartmeter.server.core\\data\\itokenrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B96E685-ECF8-427D-BCFA-3B8288DE38CA}|SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj|c:\\users\\jake\\source\\repos\\clientserveruni\\smartmeter.server.core\\smartmeter.server.core\\data\\itariffrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B96E685-ECF8-427D-BCFA-3B8288DE38CA}|SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj|solutionrelative:smartmeter.server.core\\data\\itariffrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B96E685-ECF8-427D-BCFA-3B8288DE38CA}|SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj|c:\\users\\jake\\source\\repos\\clientserveruni\\smartmeter.server.core\\smartmeter.server.core\\data\\ireadingrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B96E685-ECF8-427D-BCFA-3B8288DE38CA}|SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj|solutionrelative:smartmeter.server.core\\data\\ireadingrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,19 +154,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{6324226f-61b6-4f28-92ee-18d4b5fe1e48}"
             },
             {
               "$type": "Bookmark",
@@ -58,55 +178,436 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RabbitMQPublisher.cs",
+              "DocumentMoniker": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Sender.Test\\RabbitMQPublisher.cs",
+              "RelativeDocumentMoniker": "SmartMeter.Sender.Test\\RabbitMQPublisher.cs",
+              "ToolTip": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Sender.Test\\RabbitMQPublisher.cs",
+              "RelativeToolTip": "SmartMeter.Sender.Test\\RabbitMQPublisher.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T13:47:32.405Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FileLogger.cs",
+              "DocumentMoniker": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\Logging\\Loggers\\FileLogger.cs",
+              "RelativeDocumentMoniker": "SmartMeter.Server.Core\\Logging\\Loggers\\FileLogger.cs",
+              "ToolTip": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\Logging\\Loggers\\FileLogger.cs",
+              "RelativeToolTip": "SmartMeter.Server.Core\\Logging\\Loggers\\FileLogger.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC0AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T13:49:43.239Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RabbitMQConnectionFactory.cs",
+              "DocumentMoniker": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\Messaging\\RabbitMQConnectionFactory.cs",
+              "RelativeDocumentMoniker": "SmartMeter.Server.Core\\Messaging\\RabbitMQConnectionFactory.cs",
+              "ToolTip": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\Messaging\\RabbitMQConnectionFactory.cs",
+              "RelativeToolTip": "SmartMeter.Server.Core\\Messaging\\RabbitMQConnectionFactory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T13:36:31.068Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "RabbitMQServer.cs",
               "DocumentMoniker": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\Messaging\\RabbitMQServer.cs",
               "RelativeDocumentMoniker": "SmartMeter.Server.Core\\Messaging\\RabbitMQServer.cs",
-              "ToolTip": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\Messaging\\RabbitMQServer.cs",
-              "RelativeToolTip": "SmartMeter.Server.Core\\Messaging\\RabbitMQServer.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAxwB4AAAA1AAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\Messaging\\RabbitMQServer.cs*",
+              "RelativeToolTip": "SmartMeter.Server.Core\\Messaging\\RabbitMQServer.cs*",
+              "ViewState": "AgIAAFYAAAAAAAAAAAAgwHkAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-13T11:20:56.026Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ISmartMeterService.cs",
-              "DocumentMoniker": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\Services\\ISmartMeterService.cs",
-              "RelativeDocumentMoniker": "SmartMeter.Server.Core\\Services\\ISmartMeterService.cs",
-              "ToolTip": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\Services\\ISmartMeterService.cs",
-              "RelativeToolTip": "SmartMeter.Server.Core\\Services\\ISmartMeterService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-13T11:20:45.423Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "SmartMeterService.cs",
               "DocumentMoniker": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\Services\\SmartMeterService.cs",
               "RelativeDocumentMoniker": "SmartMeter.Server.Core\\Services\\SmartMeterService.cs",
               "ToolTip": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\Services\\SmartMeterService.cs",
               "RelativeToolTip": "SmartMeter.Server.Core\\Services\\SmartMeterService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAgwAMAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-13T11:20:12.815Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-13T11:20:12.815Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 12,
+              "Title": "MeterReadingMessage.cs",
+              "DocumentMoniker": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Sender.Test\\Models\\MeterReadingMessage.cs",
+              "RelativeDocumentMoniker": "SmartMeter.Sender.Test\\Models\\MeterReadingMessage.cs",
+              "ToolTip": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Sender.Test\\Models\\MeterReadingMessage.cs",
+              "RelativeToolTip": "SmartMeter.Sender.Test\\Models\\MeterReadingMessage.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T13:46:51.711Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "EnergyConsumption.cs",
+              "DocumentMoniker": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Sender.Test\\Models\\EnergyConsumption.cs",
+              "RelativeDocumentMoniker": "SmartMeter.Sender.Test\\Models\\EnergyConsumption.cs",
+              "ToolTip": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Sender.Test\\Models\\EnergyConsumption.cs",
+              "RelativeToolTip": "SmartMeter.Sender.Test\\Models\\EnergyConsumption.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T13:46:18.103Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "RandomDataGenerator.cs",
+              "DocumentMoniker": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Sender.Test\\RandomDataGenerator.cs",
+              "RelativeDocumentMoniker": "SmartMeter.Sender.Test\\RandomDataGenerator.cs",
+              "ToolTip": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Sender.Test\\RandomDataGenerator.cs",
+              "RelativeToolTip": "SmartMeter.Sender.Test\\RandomDataGenerator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T13:47:39.671Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "TariffData.cs",
+              "DocumentMoniker": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Sender.Test\\Models\\TariffData.cs",
+              "RelativeDocumentMoniker": "SmartMeter.Sender.Test\\Models\\TariffData.cs",
+              "ToolTip": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Sender.Test\\Models\\TariffData.cs",
+              "RelativeToolTip": "SmartMeter.Sender.Test\\Models\\TariffData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T13:46:55.352Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Tariff.cs",
+              "DocumentMoniker": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\Models\\Tariff.cs",
+              "RelativeDocumentMoniker": "SmartMeter.Server.Core\\Models\\Tariff.cs",
+              "ToolTip": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\Models\\Tariff.cs",
+              "RelativeToolTip": "SmartMeter.Server.Core\\Models\\Tariff.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T13:50:52.659Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "TokenRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\Data\\TokenRepository.cs",
+              "RelativeDocumentMoniker": "SmartMeter.Server.Core\\Data\\TokenRepository.cs",
+              "ToolTip": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\Data\\TokenRepository.cs",
+              "RelativeToolTip": "SmartMeter.Server.Core\\Data\\TokenRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T13:49:01.938Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "TariffRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\Data\\TariffRepository.cs",
+              "RelativeDocumentMoniker": "SmartMeter.Server.Core\\Data\\TariffRepository.cs",
+              "ToolTip": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\Data\\TariffRepository.cs",
+              "RelativeToolTip": "SmartMeter.Server.Core\\Data\\TariffRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T13:48:57.545Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Sender.Test\\Program.cs",
+              "RelativeDocumentMoniker": "SmartMeter.Sender.Test\\Program.cs",
+              "ToolTip": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Sender.Test\\Program.cs",
+              "RelativeToolTip": "SmartMeter.Sender.Test\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T13:47:24.049Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "JwtHelper.cs",
+              "DocumentMoniker": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Sender.Test\\JwtHelper.cs",
+              "RelativeDocumentMoniker": "SmartMeter.Sender.Test\\JwtHelper.cs",
+              "ToolTip": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Sender.Test\\JwtHelper.cs",
+              "RelativeToolTip": "SmartMeter.Sender.Test\\JwtHelper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T13:47:14.255Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ISmartMeterService.cs",
+              "DocumentMoniker": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\Services\\ISmartMeterService.cs",
+              "RelativeDocumentMoniker": "SmartMeter.Server.Core\\Services\\ISmartMeterService.cs",
+              "ToolTip": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\Services\\ISmartMeterService.cs",
+              "RelativeToolTip": "SmartMeter.Server.Core\\Services\\ISmartMeterService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-13T11:20:45.423Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\Program.cs",
+              "RelativeDocumentMoniker": "SmartMeter.Server.Core\\Program.cs",
+              "ToolTip": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\Program.cs",
+              "RelativeToolTip": "SmartMeter.Server.Core\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T13:51:09.678Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "IServer.cs",
+              "DocumentMoniker": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\Messaging\\IServer.cs",
+              "RelativeDocumentMoniker": "SmartMeter.Server.Core\\Messaging\\IServer.cs",
+              "ToolTip": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\Messaging\\IServer.cs",
+              "RelativeToolTip": "SmartMeter.Server.Core\\Messaging\\IServer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T13:50:15.827Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "IRabbitMQConnectionFactory.cs",
+              "DocumentMoniker": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\Messaging\\IRabbitMQConnectionFactory.cs",
+              "RelativeDocumentMoniker": "SmartMeter.Server.Core\\Messaging\\IRabbitMQConnectionFactory.cs",
+              "ToolTip": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\Messaging\\IRabbitMQConnectionFactory.cs",
+              "RelativeToolTip": "SmartMeter.Server.Core\\Messaging\\IRabbitMQConnectionFactory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T13:50:10.185Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
               "Title": "JWTHelper.cs",
               "DocumentMoniker": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\Authentication\\JWTHelper.cs",
               "RelativeDocumentMoniker": "SmartMeter.Server.Core\\Authentication\\JWTHelper.cs",
               "ToolTip": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\Authentication\\JWTHelper.cs",
               "RelativeToolTip": "SmartMeter.Server.Core\\Authentication\\JWTHelper.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-15T21:38:18.076Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-15T21:38:18.076Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "IJWTHelper.cs",
+              "DocumentMoniker": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\Authentication\\IJWTHelper.cs",
+              "RelativeDocumentMoniker": "SmartMeter.Server.Core\\Authentication\\IJWTHelper.cs",
+              "ToolTip": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\Authentication\\IJWTHelper.cs",
+              "RelativeToolTip": "SmartMeter.Server.Core\\Authentication\\IJWTHelper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T13:47:48.484Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "TariffJson.cs",
+              "DocumentMoniker": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\DTOs\\TariffJson.cs",
+              "RelativeDocumentMoniker": "SmartMeter.Server.Core\\DTOs\\TariffJson.cs",
+              "ToolTip": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\DTOs\\TariffJson.cs",
+              "RelativeToolTip": "SmartMeter.Server.Core\\DTOs\\TariffJson.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T13:49:21.764Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "ConsoleLogger.cs",
+              "DocumentMoniker": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\Logging\\Loggers\\ConsoleLogger.cs",
+              "RelativeDocumentMoniker": "SmartMeter.Server.Core\\Logging\\Loggers\\ConsoleLogger.cs",
+              "ToolTip": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\Logging\\Loggers\\ConsoleLogger.cs",
+              "RelativeToolTip": "SmartMeter.Server.Core\\Logging\\Loggers\\ConsoleLogger.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T13:49:39.198Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Reading.cs",
+              "DocumentMoniker": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\Models\\Reading.cs",
+              "RelativeDocumentMoniker": "SmartMeter.Server.Core\\Models\\Reading.cs",
+              "ToolTip": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\Models\\Reading.cs",
+              "RelativeToolTip": "SmartMeter.Server.Core\\Models\\Reading.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T13:50:46.84Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "ILogListener.cs",
+              "DocumentMoniker": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\Logging\\ILogListener.cs",
+              "RelativeDocumentMoniker": "SmartMeter.Server.Core\\Logging\\ILogListener.cs",
+              "ToolTip": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\Logging\\ILogListener.cs",
+              "RelativeToolTip": "SmartMeter.Server.Core\\Logging\\ILogListener.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T13:49:47.876Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Meter.cs",
+              "DocumentMoniker": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\Models\\Meter.cs",
+              "RelativeDocumentMoniker": "SmartMeter.Server.Core\\Models\\Meter.cs",
+              "ToolTip": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\Models\\Meter.cs",
+              "RelativeToolTip": "SmartMeter.Server.Core\\Models\\Meter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T13:50:40.822Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "JWToken.cs",
+              "DocumentMoniker": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\Models\\JWToken.cs",
+              "RelativeDocumentMoniker": "SmartMeter.Server.Core\\Models\\JWToken.cs",
+              "ToolTip": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\Models\\JWToken.cs",
+              "RelativeToolTip": "SmartMeter.Server.Core\\Models\\JWToken.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T13:50:34.655Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Logger.cs",
+              "DocumentMoniker": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\Logging\\Logger.cs",
+              "RelativeDocumentMoniker": "SmartMeter.Server.Core\\Logging\\Logger.cs",
+              "ToolTip": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\Logging\\Logger.cs",
+              "RelativeToolTip": "SmartMeter.Server.Core\\Logging\\Logger.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T13:49:50.894Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "LoggingFactory.cs",
+              "DocumentMoniker": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\Logging\\LoggingFactory.cs",
+              "RelativeDocumentMoniker": "SmartMeter.Server.Core\\Logging\\LoggingFactory.cs",
+              "ToolTip": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\Logging\\LoggingFactory.cs",
+              "RelativeToolTip": "SmartMeter.Server.Core\\Logging\\LoggingFactory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T13:49:57.374Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "LogLevel.cs",
+              "DocumentMoniker": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\Logging\\LogLevel.cs",
+              "RelativeDocumentMoniker": "SmartMeter.Server.Core\\Logging\\LogLevel.cs",
+              "ToolTip": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\Logging\\LogLevel.cs",
+              "RelativeToolTip": "SmartMeter.Server.Core\\Logging\\LogLevel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T13:50:03.804Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "MeterData.cs",
+              "DocumentMoniker": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\DTOs\\MeterData.cs",
+              "RelativeDocumentMoniker": "SmartMeter.Server.Core\\DTOs\\MeterData.cs",
+              "ToolTip": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\DTOs\\MeterData.cs",
+              "RelativeToolTip": "SmartMeter.Server.Core\\DTOs\\MeterData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T13:49:16.477Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "EnergyConsumption.cs",
+              "DocumentMoniker": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\DTOs\\EnergyConsumption.cs",
+              "RelativeDocumentMoniker": "SmartMeter.Server.Core\\DTOs\\EnergyConsumption.cs",
+              "ToolTip": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\DTOs\\EnergyConsumption.cs",
+              "RelativeToolTip": "SmartMeter.Server.Core\\DTOs\\EnergyConsumption.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T13:49:08.962Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "SmartMeterContext.cs",
+              "DocumentMoniker": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\Data\\SmartMeterContext.cs",
+              "RelativeDocumentMoniker": "SmartMeter.Server.Core\\Data\\SmartMeterContext.cs",
+              "ToolTip": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\Data\\SmartMeterContext.cs",
+              "RelativeToolTip": "SmartMeter.Server.Core\\Data\\SmartMeterContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T13:48:50.245Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "ReadingRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\Data\\ReadingRepository.cs",
+              "RelativeDocumentMoniker": "SmartMeter.Server.Core\\Data\\ReadingRepository.cs",
+              "ToolTip": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\Data\\ReadingRepository.cs",
+              "RelativeToolTip": "SmartMeter.Server.Core\\Data\\ReadingRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T13:48:42.35Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "ITokenRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\Data\\ITokenRepository.cs",
+              "RelativeDocumentMoniker": "SmartMeter.Server.Core\\Data\\ITokenRepository.cs",
+              "ToolTip": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\Data\\ITokenRepository.cs",
+              "RelativeToolTip": "SmartMeter.Server.Core\\Data\\ITokenRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T13:48:36.251Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "ITariffRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\Data\\ITariffRepository.cs",
+              "RelativeDocumentMoniker": "SmartMeter.Server.Core\\Data\\ITariffRepository.cs",
+              "ToolTip": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\Data\\ITariffRepository.cs",
+              "RelativeToolTip": "SmartMeter.Server.Core\\Data\\ITariffRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T13:48:27.607Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "IReadingRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\Data\\IReadingRepository.cs",
+              "RelativeDocumentMoniker": "SmartMeter.Server.Core\\Data\\IReadingRepository.cs",
+              "ToolTip": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\Data\\IReadingRepository.cs",
+              "RelativeToolTip": "SmartMeter.Server.Core\\Data\\IReadingRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T13:48:23.9Z"
             }
           ]
         }
