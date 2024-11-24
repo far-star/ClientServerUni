@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using SmartMeter.Server.Core.Logging;
 using SmartMeter.Server.Core.Logging.Loggers;
 using SmartMeter.Server.Core.DTOs;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace SmartMeter.Server.Core.Messaging
 {
@@ -16,15 +17,17 @@ namespace SmartMeter.Server.Core.Messaging
     {
         private readonly ISmartMeterService _smartMeterService;
         private readonly IRabbitMQConnectionFactory _connectionFactory;
+        private readonly IServiceProvider _serviceProvider;
         private IConnection _connection;
         private Logger _logger;
         private readonly List<IModel> _channels = new List<IModel>();
         private readonly int _numThreads = 20;
 
-        public RabbitMQServer(ISmartMeterService smartMeterService, IRabbitMQConnectionFactory connectionFactory, LoggingFactory logger)
+        public RabbitMQServer(ISmartMeterService smartMeterService, IRabbitMQConnectionFactory connectionFactory, IServiceProvider serviceProvider, LoggingFactory logger)
         {
             _smartMeterService = smartMeterService;
             _connectionFactory = connectionFactory;
+            _serviceProvider = serviceProvider;
             _logger = logger.CreateLogger();
         }
 
@@ -40,8 +43,7 @@ namespace SmartMeter.Server.Core.Messaging
                     var channel = _connection.CreateModel();
                     _channels.Add(channel);
 
-                    Thread channelThread = new Thread(() => StartChannelConsumer(channel, i));
-                    channelThread.Start();
+                    Task.Run(() => StartChannelConsumer(channel, i));
                 }
 
                 _logger.Info("Connected to RabbitMQ!");
@@ -53,72 +55,61 @@ namespace SmartMeter.Server.Core.Messaging
             }
         }
 
-        public void StartChannelConsumer(IModel channel, int channelNumber)
+        private void StartChannelConsumer(IModel channel, int channelNumber)
         {
             try
             {
-                // Declare and configure the queue
                 channel.QueueDeclare(queue: "test_queue", durable: false, exclusive: false, autoDelete: false, arguments: null);
+                channel.BasicQos(prefetchSize: 0, prefetchCount: 1, global: false);
 
-                // Setup the consumer
                 var consumer = new EventingBasicConsumer(channel);
-                consumer.Received += (model, ea) =>
+                consumer.Received += async (model, ea) =>
                 {
-                    var body = ea.Body.ToArray();
-                    var message = Encoding.UTF8.GetString(body);
-                    _logger.Info($"Received message: {message}");
-
-                    var replyTo = ea.BasicProperties.ReplyTo;
-                    var correlationId = ea.BasicProperties.CorrelationId;
-
-                    if (string.IsNullOrEmpty(replyTo))
-                    {
-                        _logger.Error("Message does not have a reply-to property. Skipping...");
-                        channel.BasicReject(ea.DeliveryTag, false);
-                        return;
-                    }
-
-                    
-                    MeterData? meterData;
-
-                    bool isSuccess = _smartMeterService.ProcessReading(message, out meterData);
-                    if (!isSuccess || meterData == null )
-                    {
-                        _logger.Error("Message Rejected");
-                        channel.BasicReject(ea.DeliveryTag, false);
-                        return;
-                    }
-
-                    var bill = _smartMeterService.CalculateBill(meterData);
-
-                    try
-                    {
-                        var responseBytes = Encoding.UTF8.GetBytes(bill);
-                        var responseProperties = channel.CreateBasicProperties();
-                        responseProperties.CorrelationId = correlationId; // Preserve correlation ID
-
-                        channel.BasicPublish(exchange: "", routingKey: replyTo, basicProperties: responseProperties, body: responseBytes);
-                        _logger.Info($"Response sent to {replyTo}: {bill}");
-                    }
-                    catch (Exception ex)
-                    {
-                        _logger.Error($"Failed to send response: {ex.Message}");
-                    }
-
-                    _logger.Success($"Message Acknowledged");
-                    channel.BasicAck(ea.DeliveryTag, false);
-
+                    await Task.Run(() => ProcessMessage(channel, ea));
                 };
 
-                // Start consuming messages from the queue
                 channel.BasicConsume(queue: "test_queue", autoAck: false, consumer: consumer);
-
-                _logger.Info("Waiting for messages...");
+                _logger.Info($"Channel {channelNumber} is consuming messages...");
             }
             catch (Exception ex)
             {
-                _logger.Error($"Error starting server: {ex.Message}");
-                Dispose();  // Ensure cleanup on failure
+                _logger.Error($"Error in channel {channelNumber}: {ex.Message}");
+            }
+        }
+
+        private void ProcessMessage(IModel channel, BasicDeliverEventArgs ea)
+        {
+            var body = ea.Body.ToArray();
+            var message = Encoding.UTF8.GetString(body);
+            _logger.Info($"Received message: {message}");
+
+            using var scope = _serviceProvider.CreateScope();
+            var smartMeterService = scope.ServiceProvider.GetRequiredService<ISmartMeterService>();
+
+            if (!smartMeterService.ProcessReading(message, out var meterData))
+            {
+                _logger.Error("Message rejected");
+                channel.BasicReject(ea.DeliveryTag, false);
+                return;
+            }
+
+            try
+            {
+                var bill = smartMeterService.CalculateBill(meterData!);
+                var responseBytes = Encoding.UTF8.GetBytes(bill);
+                var responseProperties = channel.CreateBasicProperties();
+                responseProperties.CorrelationId = ea.BasicProperties.CorrelationId;
+
+                channel.BasicPublish(exchange: "", routingKey: ea.BasicProperties.ReplyTo,
+                    basicProperties: responseProperties, body: responseBytes);
+                channel.BasicAck(ea.DeliveryTag, false);
+
+                _logger.Info($"Response sent and message acknowledged: {bill}");
+            }
+            catch (Exception ex)
+            {
+                _logger.Error($"Failed to process message: {ex.Message}");
+                channel.BasicReject(ea.DeliveryTag, false);
             }
         }
 
