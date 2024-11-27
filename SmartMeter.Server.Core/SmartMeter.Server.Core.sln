@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartMeter.Server.Core", "S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartMeter.Sender.Test", "SmartMeter.Sender.Test\SmartMeter.Sender.Test.csproj", "{7C9F4AEA-D878-404D-9DCA-FF8B0124737E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartMeterNUnitTests", "SmartMeterNUnitTests\SmartMeterNUnitTests.csproj", "{4DF60F22-89A8-473D-9F90-02F5A5AE8056}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{7C9F4AEA-D878-404D-9DCA-FF8B0124737E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7C9F4AEA-D878-404D-9DCA-FF8B0124737E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7C9F4AEA-D878-404D-9DCA-FF8B0124737E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DF60F22-89A8-473D-9F90-02F5A5AE8056}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DF60F22-89A8-473D-9F90-02F5A5AE8056}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DF60F22-89A8-473D-9F90-02F5A5AE8056}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DF60F22-89A8-473D-9F90-02F5A5AE8056}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
