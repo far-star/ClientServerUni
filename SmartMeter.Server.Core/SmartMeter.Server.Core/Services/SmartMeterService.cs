@@ -34,15 +34,8 @@ namespace SmartMeter.Server.Core.Services
         {            
             try
             {
+                // token has already been validated so proceed with parsing
                 meterData = ParseMessage(message);
-                string? token = meterData.Jwt;
-                // token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZWFkaW5nX2lkIjoiNzI4MTMiLCJqdGkiOiJhODMzNTcyMy1jNWRjLTRmOTMtODNhNC1kZmQ3MzBmOWFhZjgiLCJleHAiOjE3MzE0NDI2MzQsImlzcyI6Ik1ldGVyU2VuZGVyIiwiYXVkIjoiTWV0ZXJSZWNlaXZlciJ9.NqUyukK8JdrS7Tf6N2yd3O_2lg-yIV1_C2cstPzy1-k";
-                // ^ test token
-                if (string.IsNullOrEmpty(token) || !_jwtHelper.ValidateToken(token))
-                {
-                    _logger.Warn($"Token not found or invalid: {token}");
-                    return false;
-                }
 
                 //Write message to database
                 WriteMessageToDatabase(meterData);
@@ -61,9 +54,9 @@ namespace SmartMeter.Server.Core.Services
             // Retrieve rates and consumption in a structured way
             var rates = new
             {
-                OffPeak = meterData.Tariff.OffPeakRate,
-                Peak = meterData.Tariff.PeakRate,
-                Standard = meterData.Tariff.StandardRate
+                OffPeak = GetCurrentTariffRates(meterData.MeterId).OffPeakRate,
+                Peak = GetCurrentTariffRates(meterData.MeterId).PeakRate,
+                Standard = GetCurrentTariffRates(meterData.MeterId).StandardRate
             };
 
             var consumption = new
@@ -101,8 +94,23 @@ namespace SmartMeter.Server.Core.Services
             });
         }
 
+        public Tariff GetCurrentTariffRates(string meterId)
+        {
+            return new Tariff
+            {
+                MeterId = meterId,
+                StandardRate = 0.15m,
+                PeakRate = 0.20m,
+                OffPeakRate = 0.10m,
+                StandingCharge = 0.30m,
+                Timestamp = DateTime.UtcNow
+            };
+        }
+
+
         private void WriteMessageToDatabase(MeterData meterData)
         {
+            //TODO: Why?
             var meter = new Meter
             {
                 MeterId = meterData.MeterId,
@@ -118,26 +126,20 @@ namespace SmartMeter.Server.Core.Services
                 OffPeakConsumption = meterData.EnergyConsumption.OffPeakConsumption
             };
 
-            var tariff = new Tariff
-            {
-                MeterId = meterData.MeterId,
-                StandardRate = meterData.Tariff.StandardRate,
-                PeakRate = meterData.Tariff.PeakRate,
-                OffPeakRate = meterData.Tariff.OffPeakRate,
-                StandingCharge = meterData.Tariff.StandingCharge,
-                Timestamp = meterData.Tariff.Timestamp
-            };
+            var tariff = GetCurrentTariffRates(meterData.MeterId);
 
+            // now done in MockTokenStorage
+            /*
             var jwtToken = new JWToken
             {
                 Token = meterData.Jwt,
                 Timestamp = meterData.Timestamp,
                 Reading = reading // Associate the JWT with the reading
             };
-
+            */
 
             _readingRepository.AddReading(reading);
-            _tokenRepository.AddToken(jwtToken);
+            //_tokenRepository.AddToken(jwtToken);
             _tariffRepository.AddTariff(tariff);
 
         }

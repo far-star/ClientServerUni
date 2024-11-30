@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using RabbitMQ.Client;
 using Microsoft.Extensions.Configuration;
 using RabbitMQ.Client.Events;
+using System.Threading;
 
 
 namespace SMClient.Services
@@ -17,19 +18,29 @@ namespace SMClient.Services
         private readonly IConnection _connection;
         private readonly IModel _channel;
         private readonly string _meterId;
-        private readonly IConfiguration _configuration;
+        private readonly Dictionary<string, string> _settings;
+        private readonly string _token;
 
-        public RabbitMQService(string meterId, IConfiguration configuration)
+        private const string SecretKey = "myreallysupersecretsmartmeterkey";
+
+        public RabbitMQService(string meterId, Dictionary<string, string> settings, string token)
         {
             _meterId = meterId;
-            _configuration = configuration;
+            _settings = settings;
+            _token = token;
 
             var factory = new ConnectionFactory
             {
-                HostName = _configuration["RabbitMQ:HostName"],
-                Port = int.Parse(_configuration["RabbitMQ:Port"]),
-                UserName = _configuration["RabbitMQ:UserName"],
-                Password = _configuration["RabbitMQ:Password"]
+                HostName = _settings["HostName"],
+                Port = int.Parse(_settings["Port"]),
+                UserName = _settings["UserName"],
+                Password = _settings["Password"],
+                Ssl = new SslOption
+                {
+                    Enabled = true,
+                    ServerName = _settings["HostName"],
+                    CertificateValidationCallback = (sender, certificate, chain, sslPolicyErrors) => true // For demo only
+                }
             };
 
             _connection = factory.CreateConnection();
@@ -39,30 +50,81 @@ namespace SMClient.Services
 
         private void SetupQueues()
         {
-            // Setup queues and exchanges
-            _channel.QueueDeclare("meter_readings", true, false, false, null);
+            // Setup queues and exchanges, is grid alerts going to work this way?
+            //_channel.QueueDeclare("test_queue", true, false, false, null); 
             _channel.QueueDeclare($"bills_{_meterId}", true, false, false, null);
             // Add more queue setups as needed
         }
 
-        public void PublishReading(MeterReading reading)
+        public string PublishReading(MeterReading reading)
         {
             try
             {
-                // Convert the reading object to JSON string
+                var replyQueueName = _channel.QueueDeclare(queue: "", durable: false, exclusive: true, autoDelete: true).QueueName;
+
+                var consumer = new EventingBasicConsumer(_channel);
+                string correlationId = Guid.NewGuid().ToString();
+                string response = null;
+
+                var responseLock = new object(); 
+
+                consumer.Received += (model, ea) =>
+                {
+                    // Check if the correlation ID matches
+                    if (ea.BasicProperties.CorrelationId == correlationId)
+                    {
+                        response = Encoding.UTF8.GetString(ea.Body.ToArray());
+                        Console.WriteLine("Received response: " + response);
+
+                        // Signal that the response is received
+                        lock (responseLock)
+                        {
+                            Monitor.Pulse(responseLock);
+                        }
+                    }
+                };
+
+                // Start listening on the reply queue
+                _channel.BasicConsume(queue: replyQueueName, autoAck: true, consumer: consumer);
+
+                // Serialize the message
                 string message = System.Text.Json.JsonSerializer.Serialize(reading);
-                // Convert string to bytes for sending
                 var body = Encoding.UTF8.GetBytes(message);
 
-                // Publish to RabbitMQ
+                // Set up token
+                var properties = _channel.CreateBasicProperties();
+                properties.Headers = new Dictionary<string, object>
+                {
+                    { "Authorization", _token }
+                };
+                properties.ReplyTo = replyQueueName; // Specify reply queue
+                properties.CorrelationId = correlationId; // Set correlation ID for response tracking
+
+                // Publish the message
                 _channel.BasicPublish(
-                    exchange: "",           // Empty string means default exchange
-                    routingKey: "meter_readings", // Queue name
-                    basicProperties: null,   // Message properties (can set persistence, etc.)
-                    body: body              // The actual message
+                    exchange: "",
+                    routingKey: "test_queue", // Queue name
+                    basicProperties: properties,
+                    body: body
                 );
 
                 Console.WriteLine($"Published reading: {reading.Reading} kWh");
+
+                // Wait for the response
+                lock (responseLock)
+                {
+                    if (response == null)
+                    {
+                        Monitor.Wait(responseLock, TimeSpan.FromSeconds(10)); // Timeout after 10 seconds
+                    }
+                }
+
+                if (response == null)
+                {
+                    throw new TimeoutException("No response received within the timeout period.");
+                }
+
+                return response;
             }
             catch (Exception ex)
             {
@@ -71,28 +133,37 @@ namespace SMClient.Services
             }
         }
 
+
+
         public void SubscribeToBills(Action<BillResponse> onBillReceived)
         {
             try
             {
-                // Create a consumer that will handle received messages
                 var consumer = new EventingBasicConsumer(_channel);
 
-                // Setup what happens when a message is received
                 consumer.Received += (model, ea) =>
                 {
                     try
                     {
-                        // Convert received bytes to string
-                        var body = ea.Body.ToArray();
-                        var message = Encoding.UTF8.GetString(body);
+                        // Check if the token in the headers matches the expected token
+                        if (ea.BasicProperties.Headers != null &&
+                            ea.BasicProperties.Headers.TryGetValue("Authorization", out var tokenObj) &&
+                            Encoding.UTF8.GetString((byte[])tokenObj) == _token)
+                        {
+                            // Convert received bytes to string
+                            var body = ea.Body.ToArray();
+                            var message = Encoding.UTF8.GetString(body);
 
-                        // Convert JSON string to BillResponse object
-                        var billResponse = System.Text.Json.JsonSerializer
-                            .Deserialize<BillResponse>(message);
+                            // Convert JSON string to BillResponse object
+                            var billResponse = System.Text.Json.JsonSerializer
+                                .Deserialize<BillResponse>(message);
 
-                        // Call the provided callback with the bill
-                        onBillReceived(billResponse);
+                            onBillReceived(billResponse);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Invalid token received. Ignoring message.");
+                        }
                     }
                     catch (Exception ex)
                     {
@@ -115,6 +186,7 @@ namespace SMClient.Services
                 throw;
             }
         }
+
 
         public void Dispose()
         {

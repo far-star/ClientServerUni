@@ -12,7 +12,6 @@ namespace SMClient.Models
         public String MeterId { get; set; }
         public double Reading { get; set; }
         public DateTime Timestamp { get; set; }
-        public EnergyConsumption EnergyConsumption { get; set; }
-        // public String ReadingType { get; set; } = "CONSUMPTION"; // scalabability idea, in the future we can add more reading types
+        public String ReadingType { get; set; } = "CONSUMPTION"; // scalabability idea, in the future we can add more reading types
     }
 }

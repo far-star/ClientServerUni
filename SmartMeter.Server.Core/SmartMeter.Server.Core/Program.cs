@@ -8,6 +8,7 @@ using SmartMeter.Server.Core.Logging.Loggers;
 using SmartMeter.Server.Core.Messaging;
 using SmartMeter.Server.Core.Models;
 using SmartMeter.Server.Core.Services;
+using SmartMeter.Server.Core.Storage;
 using System;
 
 namespace SmartMeter.Server.Core
@@ -73,6 +74,7 @@ namespace SmartMeter.Server.Core
             services.AddScoped<IRabbitMQConnectionFactory, RabbitMQConnectionFactory>();
 
             services.AddScoped<IServer, RabbitMQServer>();
+            services.AddScoped<ITokenStorage, MockTokenStorage>();
 
             return services;
         }

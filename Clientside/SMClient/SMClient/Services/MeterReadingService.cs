@@ -12,8 +12,14 @@ namespace SMClient.Services
     {
         private readonly Random _random = new Random();
         private double _currentReading = 1000; // Starting value
+        private readonly string _meterId;
 
-        public MeterReading GenerateReading(String meterId)
+        public MeterReadingService(string meterId)
+        {
+            _meterId = meterId;
+        }
+
+        public MeterReading GenerateReading()
         {
             // Generate realistic reading logic
             double increase = _random.NextDouble() * 0.4 + 0.1;
@@ -21,9 +27,15 @@ namespace SMClient.Services
 
             return new MeterReading
             {
-                MeterId = meterId,
+                MeterId = _meterId,
                 Reading = Math.Round(_currentReading, 2),
-                Timestamp = DateTime.Now
+                Timestamp = DateTime.Now,
+                EnergyConsumption = new EnergyConsumption
+                {
+                    TotalConsumption = _random.Next(100, 1000),
+                    PeakConsumption = _random.Next(50, 500),
+                    OffPeakConsumption = _random.Next(50, 500)
+                }
             };
         }
     }

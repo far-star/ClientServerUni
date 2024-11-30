@@ -410,24 +410,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Jake\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\R301927\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Sender.Test\\SmartMeter.Sender.Test.csproj",
+      "projectUniqueName": "C:\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Sender.Test\\SmartMeter.Sender.Test.csproj",
       "projectName": "SmartMeter.Sender.Test",
-      "projectPath": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Sender.Test\\SmartMeter.Sender.Test.csproj",
-      "packagesPath": "C:\\Users\\Jake\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Jake\\source\\repos\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Sender.Test\\obj\\",
+      "projectPath": "C:\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Sender.Test\\SmartMeter.Sender.Test.csproj",
+      "packagesPath": "C:\\Users\\R301927\\.nuget\\packages\\",
+      "outputPath": "C:\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Sender.Test\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Jake\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\R301927\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -447,13 +442,7 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "all"
-      },
-      "SdkAnalysisLevel": "9.0.100"
+      }
     },
     "frameworks": {
       "net8.0": {
@@ -488,7 +477,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

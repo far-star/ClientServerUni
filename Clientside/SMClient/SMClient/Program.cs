@@ -1,47 +1,64 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using System.Configuration;
 using SMClient.Services;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
+using System.Collections.Specialized;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+
+using System.Collections.Generic;
 
 namespace SMClient
 {
     internal static class Program
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
         static async Task Main(string[] args)
         {
-            // Load configuration
-            IConfiguration configuration = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json")
-                .Build();
+
 
             string meterId = Guid.NewGuid().ToString();
-
-            // Create random number generator
             Random random = new Random();
 
-            // Setup services
             RabbitMQService rabbitMQService = null;
+            var displayService = new DisplayService();
 
             try
             {
-                rabbitMQService = new RabbitMQService(meterId, configuration);
-                var meterService = new MeterReadingService();
-                var displayService = new DisplayService();
+                // Creating dictionary of RabbitMQ settings
+                var rabbitMQSettings = new Dictionary<string, string>
+                {
+                    { "HostName", ConfigurationManager.AppSettings["RabbitMQ_HostName"] },
+                    { "Port", ConfigurationManager.AppSettings["RabbitMQ_Port"] },
+                    { "UserName", ConfigurationManager.AppSettings["RabbitMQ_UserName"] },
+                    { "Password", ConfigurationManager.AppSettings["RabbitMQ_Password"] }
+                };
+
+                // Request token
+                var tokenService = new RMQTokenService(rabbitMQSettings);
+                string token = tokenService.RequestToken(meterId);
+                while (token == null)
+                {
+                    Console.WriteLine("No Token Recieved");
+                    Console.WriteLine("Waiting for token...");
+                    await Task.Delay(1000);
+                    token = tokenService.RequestToken(meterId);
+                }
+                Console.WriteLine($"Token received: {token}");
+                tokenService.Dispose(); // so we don't have multiple connections per client
+
+                rabbitMQService = new RabbitMQService(meterId, rabbitMQSettings, token);
+                var meterService = new MeterReadingService(meterId);
+
+                // Subscribe to bills
+                rabbitMQService.SubscribeToBills(billResponse => {
+                    Console.WriteLine($"Received bill: {billResponse}");
+                    //displayService.ShowBill(billResponse);
+                });
 
                 // Start the meter monitoring loop
                 while (true)
                 {
                     try
                     {
-                        var reading = meterService.GenerateReading(meterId);
+                        var reading = meterService.GenerateReading();
                         rabbitMQService.PublishReading(reading);
 
                         // Random delay between readings (15-60 seconds)
@@ -49,6 +66,7 @@ namespace SMClient
                     }
                     catch (Exception ex)
                     {
+                        Console.WriteLine($"Error: {ex.Message}");
                         //displayService.ShowError($"Error: {ex.Message}");
                         await Task.Delay(5000); // Wait before retry
                     }
@@ -56,11 +74,7 @@ namespace SMClient
             }
             finally
             {
-                // Cleanup
-                if (rabbitMQService != null)
-                {
-                    rabbitMQService.Dispose();
-                }
+                rabbitMQService?.Dispose();
             }
         }
     }
