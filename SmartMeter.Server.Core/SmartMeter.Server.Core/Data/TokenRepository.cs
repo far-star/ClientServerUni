@@ -1,6 +1,5 @@
-﻿using SmartMeter.Server.Core.Logging;
-using SmartMeter.Server.Core.Models;
-using System;
+﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,30 +9,23 @@ namespace SmartMeter.Server.Core.Data
 {
     public class TokenRepository : ITokenRepository
     {
-        private readonly SmartMeterContext _context;
-        private Logger _logger;
 
-        public TokenRepository(SmartMeterContext context, Logger logger)
+        private readonly ConcurrentDictionary<string, string> _tokenStore = new();
+
+        public void StoreToken(string meterId, string token)
         {
-            _context = context;
-            _logger = logger;
+            _tokenStore[meterId] = token;
         }
 
-        public void AddToken(JWToken token)
+        public string? GetToken(string meterId)
         {
-            _context.JWTokens.Add(token);
-            _context.SaveChanges();
-
-            Console.WriteLine("\n=== JWTokens ===");
-            foreach (var jwt in _context.JWTokens)
-            {
-                Console.WriteLine($"JwtId: {jwt.JwtId}, ReadingId: {jwt.ReadingId}, Token: {jwt.Token}, Timestamp: {jwt.Timestamp}");
-            }
+            _tokenStore.TryGetValue(meterId, out var token);
+            return token;
         }
 
-        public JWToken GetTokenByReadingId(int readingId)
+        public bool ValidateToken(string meterId, string token)
         {
-            return _context.JWTokens.FirstOrDefault(t => t.ReadingId == readingId);
+            return _tokenStore.TryGetValue(meterId, out var storedToken) && storedToken == token;
         }
     }
 }

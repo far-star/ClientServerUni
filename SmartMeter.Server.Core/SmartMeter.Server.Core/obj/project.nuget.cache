@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "X+H5bBmTC9cfQNWj3YOW3diWBabHpByVIDOddaUs0mkrDRarfjj/YowcU4oQzsP/uHnIcbg4pHcP8MAU0GAEwQ==",
+  "dgSpecHash": "uM7NLQqY3OPz88VEflynELhAh2Bz6ZXIG9ZHEgNO4NZBIsFynoBkQ9uMJb6u3vNcqWT3jLMSmb01t/htraKfpQ==",
   "success": true,
-  "projectFilePath": "C:\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj",
+  "projectFilePath": "C:\\CSFinal\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\R301927\\.nuget\\packages\\microsoft.entityframeworkcore\\8.0.8\\microsoft.entityframeworkcore.8.0.8.nupkg.sha512",
     "C:\\Users\\R301927\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\8.0.8\\microsoft.entityframeworkcore.abstractions.8.0.8.nupkg.sha512",

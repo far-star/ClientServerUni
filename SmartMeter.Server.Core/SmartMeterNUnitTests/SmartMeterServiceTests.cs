@@ -171,7 +171,6 @@ namespace SmartMeterTests
                 .Returns(true);
 
             _mockReadingRepo.Setup(x => x.AddReading(It.IsAny<Reading>()));
-            _mockTokenRepo.Setup(x => x.AddToken(It.IsAny<JWToken>()));
             _mockTariffRepo.Setup(x => x.AddTariff(It.IsAny<Tariff>()));
 
             // Act
@@ -212,7 +211,7 @@ namespace SmartMeterTests
                 .Returns(true);
 
             _mockReadingRepo.Setup(x => x.AddReading(It.IsAny<Reading>()));
-            _mockTokenRepo.Setup(x => x.AddToken(It.IsAny<JWToken>()));
+            //_mockTokenRepo.Setup(x => x.AddToken(It.IsAny<JWToken>()));
             _mockTariffRepo.Setup(x => x.AddTariff(It.IsAny<Tariff>()));
 
             // Act

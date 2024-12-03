@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj": {}
+    "C:\\CSFinal\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj": {}
   },
   "projects": {
-    "C:\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj": {
+    "C:\\CSFinal\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj",
+        "projectUniqueName": "C:\\CSFinal\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj",
         "projectName": "SmartMeter.Server.Core",
-        "projectPath": "C:\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj",
+        "projectPath": "C:\\CSFinal\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj",
         "packagesPath": "C:\\Users\\R301927\\.nuget\\packages\\",
-        "outputPath": "C:\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\obj\\",
+        "outputPath": "C:\\CSFinal\\SmartMeter.Server.Core\\SmartMeter.Server.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\R301927\\AppData\\Roaming\\NuGet\\NuGet.Config",

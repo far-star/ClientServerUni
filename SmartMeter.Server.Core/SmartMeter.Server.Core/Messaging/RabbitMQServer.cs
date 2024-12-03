@@ -14,7 +14,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Security.Cryptography;
-using SmartMeter.Server.Core.Storage;
+using SmartMeter.Server.Core.Data;
 using SmartMeter.Server.Core.Models;
 using System.Diagnostics.Metrics;
 
@@ -26,13 +26,13 @@ namespace SmartMeter.Server.Core.Messaging
         private readonly ISmartMeterService _smartMeterService;
         private readonly IRabbitMQConnectionFactory _connectionFactory;
         private readonly IServiceProvider _serviceProvider;
-        private IConnection _connection;
+        private IConnection? _connection;
         private Logger _logger;
         private readonly List<IModel> _channels = new List<IModel>();
         private readonly int _numThreads = 20;
-        private readonly ITokenStorage _tokenStorage;
+        private readonly ITokenRepository _tokenStorage;
 
-        public RabbitMQServer(ISmartMeterService smartMeterService, IRabbitMQConnectionFactory connectionFactory, IServiceProvider serviceProvider, LoggingFactory logger, ITokenStorage tokenStorage)
+        public RabbitMQServer(ISmartMeterService smartMeterService, IRabbitMQConnectionFactory connectionFactory, IServiceProvider serviceProvider, LoggingFactory logger, ITokenRepository tokenStorage)
         {
             _smartMeterService = smartMeterService;
             _connectionFactory = connectionFactory;
@@ -204,11 +204,11 @@ namespace SmartMeter.Server.Core.Messaging
 
             // Validate the token from headers
             if (ea.BasicProperties.Headers == null ||
-                !ea.BasicProperties.Headers.TryGetValue("Authorization", out var tokenObj) ||
+                !ea.BasicProperties.Headers.TryGetValue("Authorisation", out var tokenObj) ||
                 tokenObj == null ||
                 !(tokenObj is byte[] tokenBytes))
             {
-                _logger.Error("Missing or malformed Authorization token in message headers.");
+                _logger.Error("Missing or malformed Authorisation token in message headers.");
                 channel.BasicReject(ea.DeliveryTag, false);
                 return;
             }
@@ -268,7 +268,7 @@ namespace SmartMeter.Server.Core.Messaging
                 responseProperties.CorrelationId = ea.BasicProperties.CorrelationId;
                 responseProperties.Headers = new Dictionary<string, object>
                 {
-                    { "Authorization", token }
+                    { "Authorisation", token }
                 };
 
                 channel.BasicPublish(exchange: "", routingKey: ea.BasicProperties.ReplyTo,

@@ -8,7 +8,6 @@ using SmartMeter.Server.Core.Logging.Loggers;
 using SmartMeter.Server.Core.Messaging;
 using SmartMeter.Server.Core.Models;
 using SmartMeter.Server.Core.Services;
-using SmartMeter.Server.Core.Storage;
 using System;
 
 namespace SmartMeter.Server.Core
@@ -66,7 +65,7 @@ namespace SmartMeter.Server.Core
                 options.UseInMemoryDatabase("SmartMeterMockDb"));
 
             services.AddScoped<IReadingRepository, ReadingRepository>();
-            services.AddScoped<ITokenRepository, TokenRepository>();
+            services.AddScoped<Data.ITokenRepository, Data.TokenRepository>();
             services.AddScoped<ITariffRepository, TariffRepository>();
 
             services.AddScoped<IJWTHelper, JWTHelper>();
@@ -74,7 +73,6 @@ namespace SmartMeter.Server.Core
             services.AddScoped<IRabbitMQConnectionFactory, RabbitMQConnectionFactory>();
 
             services.AddScoped<IServer, RabbitMQServer>();
-            services.AddScoped<ITokenStorage, MockTokenStorage>();
 
             return services;
         }

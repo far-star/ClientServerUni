@@ -1,5 +1,4 @@
-﻿using SmartMeter.Server.Core.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,7 +8,8 @@ namespace SmartMeter.Server.Core.Data
 {
     public interface ITokenRepository
     {
-        JWToken GetTokenByReadingId(int id);
-        void AddToken(JWToken token);
+        void StoreToken(string meterId, string token);
+        string? GetToken(string meterId);
+        bool ValidateToken(string meterId, string token);
     }
 }

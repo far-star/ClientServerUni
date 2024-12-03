@@ -415,11 +415,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Sender.Test\\SmartMeter.Sender.Test.csproj",
+      "projectUniqueName": "C:\\CSFinal\\SmartMeter.Server.Core\\SmartMeter.Sender.Test\\SmartMeter.Sender.Test.csproj",
       "projectName": "SmartMeter.Sender.Test",
-      "projectPath": "C:\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Sender.Test\\SmartMeter.Sender.Test.csproj",
+      "projectPath": "C:\\CSFinal\\SmartMeter.Server.Core\\SmartMeter.Sender.Test\\SmartMeter.Sender.Test.csproj",
       "packagesPath": "C:\\Users\\R301927\\.nuget\\packages\\",
-      "outputPath": "C:\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Sender.Test\\obj\\",
+      "outputPath": "C:\\CSFinal\\SmartMeter.Server.Core\\SmartMeter.Sender.Test\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\R301927\\AppData\\Roaming\\NuGet\\NuGet.Config",

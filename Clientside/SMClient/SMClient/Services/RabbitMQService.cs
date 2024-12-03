@@ -95,10 +95,13 @@ namespace SMClient.Services
                 var properties = _channel.CreateBasicProperties();
                 properties.Headers = new Dictionary<string, object>
                 {
-                    { "Authorization", _token }
+                    { "Authorisation", _token }
                 };
                 properties.ReplyTo = replyQueueName; // Specify reply queue
                 properties.CorrelationId = correlationId; // Set correlation ID for response tracking
+
+                // Write the token
+                Console.WriteLine("meterid: " + reading.MeterId + "and the token is " + _token);
 
                 // Publish the message
                 _channel.BasicPublish(
@@ -147,7 +150,7 @@ namespace SMClient.Services
                     {
                         // Check if the token in the headers matches the expected token
                         if (ea.BasicProperties.Headers != null &&
-                            ea.BasicProperties.Headers.TryGetValue("Authorization", out var tokenObj) &&
+                            ea.BasicProperties.Headers.TryGetValue("Authorisation", out var tokenObj) &&
                             Encoding.UTF8.GetString((byte[])tokenObj) == _token)
                         {
                             // Convert received bytes to string

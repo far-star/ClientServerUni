@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "hq3hV2S92p7Bgv/NEKQ3hIy2nbTzxiFKyInXsMbpk4DndBmbb27f8Xdvou49Z+Xnis58FMd97qrwSa86sQgFtQ==",
+  "dgSpecHash": "HmS0vSMUa0i+HYMNYuCB/mYSBvtBEYwa8IzKxf5r5r6hq+BzHSQQLarMmvYLa60hpzzy/7dB933N+jYL72/Vsw==",
   "success": true,
-  "projectFilePath": "C:\\ClientServerUni\\SmartMeter.Server.Core\\SmartMeter.Sender.Test\\SmartMeter.Sender.Test.csproj",
+  "projectFilePath": "C:\\CSFinal\\SmartMeter.Server.Core\\SmartMeter.Sender.Test\\SmartMeter.Sender.Test.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\R301927\\.nuget\\packages\\microsoft.bcl.timeprovider\\8.0.1\\microsoft.bcl.timeprovider.8.0.1.nupkg.sha512",
     "C:\\Users\\R301927\\.nuget\\packages\\microsoft.identitymodel.abstractions\\8.1.1\\microsoft.identitymodel.abstractions.8.1.1.nupkg.sha512",
