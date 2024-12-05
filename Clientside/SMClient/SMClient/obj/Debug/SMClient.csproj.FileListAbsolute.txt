@@ -1,0 +1,8 @@
+C:\Users\ghhussai\source\repos\far-star\ClientServerUni\Clientside\SMClient\SMClient\obj\Debug\SMClient.csproj.AssemblyReference.cache
+C:\Users\ghhussai\source\repos\far-star\ClientServerUni\Clientside\SMClient\SMClient\obj\Debug\SMClient.Login.resources
+C:\Users\ghhussai\source\repos\far-star\ClientServerUni\Clientside\SMClient\SMClient\obj\Debug\SMClient.MainScreen.resources
+C:\Users\ghhussai\source\repos\far-star\ClientServerUni\Clientside\SMClient\SMClient\obj\Debug\SMClient.NetworkStatusCheck.resources
+C:\Users\ghhussai\source\repos\far-star\ClientServerUni\Clientside\SMClient\SMClient\obj\Debug\SMClient.Properties.Resources.resources
+C:\Users\ghhussai\source\repos\far-star\ClientServerUni\Clientside\SMClient\SMClient\obj\Debug\SMClient.ViewBill.resources
+C:\Users\ghhussai\source\repos\far-star\ClientServerUni\Clientside\SMClient\SMClient\obj\Debug\SMClient.csproj.GenerateResource.cache
+C:\Users\ghhussai\source\repos\far-star\ClientServerUni\Clientside\SMClient\SMClient\obj\Debug\SMClient.csproj.CoreCompileInputs.cache

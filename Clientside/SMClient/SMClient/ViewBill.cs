@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace SMClient
 {
-    public partial class Form1 : Form
+    public partial class ViewBill : Form
     {
-        public Form1()
+        public ViewBill()
         {
             InitializeComponent();
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+            MainScreen mainScreen = new MainScreen();
+            mainScreen.Show();
+            this.Hide();
         }
     }
 }
