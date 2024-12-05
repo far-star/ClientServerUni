@@ -5,6 +5,7 @@ using System.Collections.Specialized;
 using System.Threading.Tasks;
 
 using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace SMClient
 {
@@ -12,6 +13,7 @@ namespace SMClient
     {
         static async Task Main(string[] args)
         {
+
 
 
             string meterId = Guid.NewGuid().ToString();
@@ -76,6 +78,13 @@ namespace SMClient
             {
                 rabbitMQService?.Dispose();
             }
+
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new MainScreen());
+
         }
+
+
     }
 }

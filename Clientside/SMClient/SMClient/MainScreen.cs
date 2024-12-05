@@ -22,12 +22,7 @@ namespace SMClient
 
         }
 
-        private void label8_Click(object sender, EventArgs e)
-        {
-            Login login = new Login();
-            login.Show();
-            this.Hide();
-        }
+
 
         private void button2_Click(object sender, EventArgs e)
         {
