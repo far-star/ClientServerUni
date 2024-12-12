@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SMClient.Models;
+using SMClient.Services;
 
 namespace SMClient
 {
@@ -15,6 +17,7 @@ namespace SMClient
         public MainScreen()
         {
             InitializeComponent();
+
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -37,5 +40,45 @@ namespace SMClient
             networkStatusCheck.Show();
             this.Hide();
         }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public void DisplayMessage(string message)
+        {
+            if (this.InvokeRequired)
+            {
+                this.Invoke(new Action<string>(DisplayMessage), message);
+                label5.Text = message;
+
+            }
+            else
+            {
+                label5.Text = message;
+            }
+        }
+
+        public void DisplayBill(BillResponse billResponse)
+        {
+            if (this.InvokeRequired)
+            {
+                string message = $"Received bill: {billResponse.Amount} for meter {billResponse.MeterId} on {billResponse.BillDate}";
+                DisplayMessage(message);
+                label6.Text = message;
+
+            }
+            else
+            {
+                label6.Text = billResponse.ToString();
+            }
+
+
+        }
+
+
     }
+
+
 }

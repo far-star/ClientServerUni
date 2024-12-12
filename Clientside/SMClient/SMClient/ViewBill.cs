@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SMClient.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,5 +24,23 @@ namespace SMClient
             mainScreen.Show();
             this.Hide();
         }
+
+        public void DisplayBillDetails(BillResponse billResponse)
+        {
+            string message = $"Received bill: {billResponse.Amount} for meter {billResponse.MeterId} on {billResponse.BillDate}";
+            if (this.InvokeRequired)
+            {
+                this.Invoke(new Action<BillResponse>(DisplayBillDetails), billResponse);
+                label24.Text = message;
+
+            }
+            else
+            {
+                label24.Text = message;
+ 
+            }
+        }
+
+
     }
 }

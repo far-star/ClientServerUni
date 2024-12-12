@@ -49,39 +49,54 @@ namespace SMClient
                 rabbitMQService = new RabbitMQService(meterId, rabbitMQSettings, token);
                 var meterService = new MeterReadingService(meterId);
 
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                var mainScreen = new MainScreen();
+                var viewBill = new ViewBill();
+                var networkStatusCheck = new NetworkStatusCheck();
+
                 // Subscribe to bills
-                rabbitMQService.SubscribeToBills(billResponse => {
+                rabbitMQService.SubscribeToBills(billResponse =>
+                {
                     Console.WriteLine($"Received bill: {billResponse}");
                     //displayService.ShowBill(billResponse);
+                    rabbitMQService.OnReadingPublished += mainScreen.DisplayMessage;
+                    rabbitMQService.OnBillReceived += mainScreen.DisplayBill;
+                    rabbitMQService.OnBillReceived += viewBill.DisplayBillDetails;
+
+                    // Unable to figure out what to do with this line to display what's needed.
+                    // rabbitMQService.OnBillReceived += networkStatusCheck.DisplayNetworkAlert;
+
                 });
 
                 // Start the meter monitoring loop
-                while (true)
+                Task.Run(async () =>
                 {
-                    try
+                    while (true)
                     {
-                        var reading = meterService.GenerateReading();
-                        rabbitMQService.PublishReading(reading);
+                        try
+                        {
+                            var reading = meterService.GenerateReading();
+                            rabbitMQService.PublishReading(reading);
+                            // Random delay between readings (15-60 seconds)
+                            await Task.Delay(random.Next(15000, 60000));
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine($"Error: {ex.Message}");
+                            //displayService.ShowError($"Error: {ex.Message}");
+                            await Task.Delay(5000); // Wait before retry
+                        }
+                    }
+                });
+                Application.Run(mainScreen);
 
-                        // Random delay between readings (15-60 seconds)
-                        await Task.Delay(random.Next(15000, 60000));
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine($"Error: {ex.Message}");
-                        //displayService.ShowError($"Error: {ex.Message}");
-                        await Task.Delay(5000); // Wait before retry
-                    }
-                }
             }
             finally
             {
                 rabbitMQService?.Dispose();
             }
 
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainScreen());
 
         }
 

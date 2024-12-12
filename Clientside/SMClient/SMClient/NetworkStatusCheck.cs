@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SMClient.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,9 +18,18 @@ namespace SMClient
             InitializeComponent();
         }
 
-        private void label7_Click(object sender, EventArgs e)
+        public void DisplayNetworkAlert(NetworkAlert networkAlert)
         {
-
+            string message = $"Received network alert: {networkAlert.ErrorType} - {networkAlert.Message} on {networkAlert.Timestamp}";
+            if (this.InvokeRequired)
+            {
+                this.Invoke(new Action<NetworkAlert>(DisplayNetworkAlert), networkAlert);
+                label1.Text = message;
+            }
+            else
+            {
+                label1.Text = message;
+            }
         }
 
         private void label8_Click(object sender, EventArgs e)
@@ -27,6 +37,11 @@ namespace SMClient
             MainScreen mainScreen = new MainScreen();
             mainScreen.Show();
             this.Hide();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

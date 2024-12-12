@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "SmartMeter.Server.Core\\SmartMeter.Server.Core.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "SmartMeter.Sender.Test\\SmartMeter.Sender.Test.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

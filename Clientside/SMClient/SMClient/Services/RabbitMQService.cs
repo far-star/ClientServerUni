@@ -20,6 +20,8 @@ namespace SMClient.Services
         private readonly string _meterId;
         private readonly Dictionary<string, string> _settings;
         private readonly string _token;
+        public event Action<string> OnReadingPublished;
+        public event Action<BillResponse> OnBillReceived;
 
         private const string SecretKey = "myreallysupersecretsmartmeterkey";
 
@@ -112,6 +114,7 @@ namespace SMClient.Services
                 );
 
                 Console.WriteLine($"Published reading: {reading.Reading} kWh");
+                OnReadingPublished?.Invoke($"Published reading: {reading.Reading} kWh");
 
                 // Wait for the response
                 lock (responseLock)
@@ -162,6 +165,7 @@ namespace SMClient.Services
                                 .Deserialize<BillResponse>(message);
 
                             onBillReceived(billResponse);
+                            OnBillReceived?.Invoke(billResponse);
                         }
                         else
                         {
