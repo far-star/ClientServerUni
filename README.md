@@ -1,4 +1,10 @@
 SHU Project - September 2024
 
 
-Link to requirements checklist Google Doc: https://docs.google.com/document/d/1-chuBPqiKXKBXZcC_HNbWIXXcWcl2iNh30YRWfmpd-8/edit?usp=sharing
+
+Setup instructions:
+First ensure you have Visual Studio 2022 and RabbitMQ installed.
+Clone the repo to your Visual Studio.
+Setup the RabbitMQ by following the instructions inside the Word document under this path: C:\<wherever you have saved your repo>\far-star\ClientServerUni\SmartMeter.Server.Core\Resources\Documentation
+Next open the SmartMeter.Server.Core in one VS window, and SMClient in another VS window.
+Then press 'Start' on the server and after a few seconds press 'Start' on the SMClient and it should run!
